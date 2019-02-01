@@ -4,8 +4,8 @@ public class chatBot {
 	static String name; 
 	public static void main(String args[]) {
 		//added a cute little printing thing. lemme know thoughts. keep it until we get GUI
-		Loadingscrean.main(args);
-		//
+		//Loadingscrean.main(args); BLOCKED LOADING SCREEN FOR QUICKER TESTING
+		
 		System.out.println("ROAr roar roooar roar rrrroooaaaarrr RoaaaaaaaaaaaaaaaAAArrArArAr");
 		System.out.println("(Welcome to the Dino-Bot, Please Enter the name you would like to be called by.)");
 		Scanner mainscan = new Scanner(System.in);
@@ -31,6 +31,23 @@ public class chatBot {
 			}
 			else if (optionpicked[i].equals("rawr")){ //goes to roargame method
 				roargame();
+			}
+			else if (optionpicked[i].equals("what")) {
+				System.out.println("Curious to know what I can do? Have a list"); //prints list of topics
+				System.out.println(thinking());
+				System.out.println(thinking());
+				System.out.println(thinking());
+				System.out.println("We can test how well your roar is!");
+				System.out.println("Or we can talk about food");
+				System.out.println("I know a decent amount about INSERT TOPIC 1");
+				System.out.println("We can discuss INSERT TOPIC 2");
+				System.out.println("How about talking about INSERT TOPIC 3");
+				System.out.println("INSERT TOPIC 4 happens to be something that interests me");
+				System.out.println("Or maybe you want to talk about INSERT TOPIC 5");
+				System.out.println("Or if you want to get to know me thats fine too!");
+				System.out.println(thinking());
+				inputfield();
+
 			}
 			else{ //if neither roar nor rawr then ignore
 				
