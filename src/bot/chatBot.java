@@ -80,11 +80,7 @@ public class chatBot {
 			case "yes": case "yup": case "okay": case "sure": case "ok":
 				RawrXD.main(null);
 				break;
-			case "no": case "nope":
-				System.out.println("No? Okay then.");
-				inputfield();
-				break;
-			case "nah":
+			case "no": case "nope": case "nah":
 				System.out.println("No? Okay then.");
 				inputfield();
 				break;
