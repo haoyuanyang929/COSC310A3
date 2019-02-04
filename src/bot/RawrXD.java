@@ -21,11 +21,11 @@ public class RawrXD extends chatBot{
 		if (sentencecheck.length > 1) { //if a sentence is detected its not a roar, throw and see if they are trying to quit
 			for(int i = 0; i < sentencecheck.length; i++) { //for loop to check every part of the sentence to see if you typed that you want to quit
 				switch(sentencecheck[i]) { //then throws you to very start if you decide not to.
-				case "quit":	case "stop":	case "end": 	case "leave":	case "cease":
+				case "quit":	case "stop":	case "end": 	case "leave":	case "cease": //improved efficency
 					System.out.println("Maybe we can try again later?");
 					chatBot.inputfield();
 					break;
-				default:
+				default: 
 					break;
 				}
 			}
