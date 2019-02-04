@@ -1,6 +1,7 @@
 package bot;
 import java.util.Scanner;
 public class chatBot {
+
 	static String name; 
 	public static void main(String args[]) {
 		//added a cute little printing thing. lemme know thoughts. keep it until we get GUI
@@ -76,30 +77,10 @@ public class chatBot {
 		for(int i = 0; i < rawrpick.length; i++ ){ //looking for roar or rawr
 			String rawrgrabbed = rawrpick[i];
 			switch(rawrgrabbed){ //switch parsing string to see what happens
-			case "yes":
+			case "yes": case "yup": case "okay": case "sure": case "ok":
 				RawrXD.main(null);
 				break;
-			case "yup":
-				RawrXD.main(null);
-				break;
-			case "okay":
-				RawrXD.main(null);
-				break;
-			case "sure":
-				RawrXD.main(null);
-				break;
-			case "ok":
-				RawrXD.main(null);
-				break;
-			case "no":
-				System.out.println("No? Okay then.");
-				inputfield();
-				break;
-			case "nope":
-				System.out.println("No? Okay then.");
-				inputfield();
-				break;
-			case "nah":
+			case "no": case "nope": case "nah":
 				System.out.println("No? Okay then.");
 				inputfield();
 				break;
