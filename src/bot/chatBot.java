@@ -44,39 +44,39 @@ public class chatBot {
 		
 		
 		startoption = inscan.nextLine(); //scanning an input
-		String[] optionpicked = startoption.split("\\s+"); //splitting it up
-		for(int i = 0; i < optionpicked.length; i++ ){ //looking for roar or rawr
-			if (optionpicked[i].equals("roar")){ //goes to roargame method
-				roargame();
+		//roar else
+		if(startoption.contains("roar")) { //if it contains roar jump to roar file
+			boolean grab = checktopic("roar"); //checking topic for user confirmation
+			if(grab == true) {
+				System.out.println("roar accepted");
+				RawrXD.main(null); //if user says yes it goes to collection topic
 			}
-			else if (optionpicked[i].equals("rawr")){ //goes to roargame method
-				roargame();
+			else {
+				System.out.println("roar denied");
+				inputfield(); //if user say no it goes back to input
 			}
-			else if (optionpicked[i].equals("collection")) { //goes to the collection check method
-				checkstring = optionpicked[i];
-				boolean grab = checktopic(checkstring);
-				if(grab == true) {
-					System.out.println("collection accepted");
-					Collectiontopic.main(null);
-				}
-				else
-					System.out.println("collection denied");
-					inputfield();
+		}
+		//collection else if it contains collection go here
+		else if(startoption.contains("collection")) {
+			boolean grab = checktopic("Collections"); //checking topic for user confirmation
+			if(grab == true) {
+				System.out.println("collection accepted");
+				Collectiontopic.main(null); //if user says yes it goes to collection topic
 			}
-			
-			else if (optionpicked[i].equals("food")) { //goes to the collection check method
-				checkstring = optionpicked[i];
-				boolean grab = checktopic(checkstring);
-				if(grab == true) {
-					System.out.println("food accepted");
-					inputfield();
-				}
-				else
-					System.out.println("food denied");
-					inputfield();
+			else {
+				System.out.println("collection denied");
+				inputfield(); //if user say no it goes back to input
 			}
-			
-			else{ //if not a valid location
+		}
+		//Food else
+		else if(startoption.contains("food")) { //if someone says food
+			boolean grab = checktopic("Food"); //goes to checktopic to check if you want to talk food
+			if(grab == true) {
+				System.out.println("food accepted"); //food accepted go to food class
+				
+			}
+			else {
+				System.out.println("Food denied"); //denied go back to input
 				inputfield();
 			}
 		}
@@ -85,45 +85,6 @@ public class chatBot {
 			
 	}
 	
-	
-	public static void roargame(){ //method that activated the roar game
-		//calling the thinking method
-		Scanner confrawr = new Scanner(System.in);
-		System.out.println(thinking()); //these are making it look like it is thinking
-		System.out.println(thinking());
-		System.out.println(thinking());
-		System.out.println(thinking());
-
-		
-		//rawr checking
-		System.out.println("Sorry! My dino-speech is better than my english, did you want to have a roaring contest?"); //maybe you didn't mean to go here
-		String rawryesno = confrawr.nextLine();
-		String[] rawrpick = rawryesno.split(" "); //splitting it up
-		for(int i = 0; i < rawrpick.length; i++ ){ //looking for roar or rawr
-			String rawrgrabbed = rawrpick[i];
-			switch(rawrgrabbed){ //switch parsing string to see what happens
-			case "yes": case "yup": case "okay": case "sure": case "ok":
-				RawrXD.main(null);
-				break;
-			case "no": case "nope": case "nah":
-				System.out.println("No? Okay then.");
-				inputfield();
-				break;
-			case "never":
-				System.out.println("No? Okay then.");
-				inputfield();
-				break;
-			default:
-				System.out.println("I still don't understand."); //default incase you spam the keyboard
-				inputfield();
-				
-			}
-		}
-		confrawr.close();
-		//calling the roar method
-
-	}
-
 	public static String thinking(){ //prints a line of dots after 1.5 seconds to mimic thinking animation
 		long curtime = System.currentTimeMillis();
 		long waittime1 = System.currentTimeMillis() + 150;
@@ -134,23 +95,28 @@ public class chatBot {
 
 	}
 	//CHECKING THE TOPIC
-	public static boolean checktopic(String top) {
+	public static boolean checktopic(String top) { //grabs the topic, to save space this is used fo most topics
 		Scanner topche = new Scanner(System.in);
-		System.out.println("Sorry! My dino-speech is better than my english, did you want to talk about " + top + " ?"); //maybe you didn't mean to go here
+		if(top.equals("roar")) {
+			System.out.println("Sorry! My dino-speech is better than my english, did you want to have a roaring contest?"); //maybe you didn't mean to go here
+		}
+		else {
+			System.out.println("Sorry! My dino-speech is better than my english, did you want to talk about " + top + " ?"); //maybe you didn't mean to go here
+		}
 		String topicyesno = topche.nextLine();
 		String[] topicsentence = topicyesno.split(" "); //splitting it up
 		for(int i = 0; i < topicsentence.length; i++){ //
 			String topgrabbed = topicsentence[i];
 			switch(topgrabbed){ //switch parsing string to see what happens
+			
 			case "yes": case "yup": case "okay": case "sure": case "ok":
-				topche.close();
 				return true; //returns true to where it was called
+				
 			case "no": case "nope": case "nah": case "never":
 				System.out.println("No? Okay then.");
-				topche.close();
 				return false; //returns false to where it was called.
+				
 			default:
-				topche.close();
 				System.out.println("I still don't understand."); //default incase you spam the keyboard
 				
 			}
