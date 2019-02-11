@@ -3,7 +3,7 @@ package bot;
 public class Collection {
 
 	public static void main(String[] args) {
-		//this is the pathways i generated for discussing their collection. Don't worry, I know how to read the nested responses. They are bound to change.
+		//this is the pathways i generated for discussing their collection. Don't worry, I know how to read the nested responses. They are bound to change This was Noah's "script".
 		
 		//U what is in your collection?
 		//		*D I have rocks
