@@ -5,19 +5,18 @@ import java.util.*;
 
 public class IrrelavantTopic {
 	Object obj;
-	String keyword;
-	boolean topicExists;
+	String keyword, wHquestion;
+	boolean topicExists, hasQuestion;
 	Method runTopic;
+
 	ArrayList<String> topics = new ArrayList<String>();
 
 	IrrelavantTopic(){
 		topics.add("food");
 		topics.add("hobbies");
 		topics.add("me");
-		topics.add("rawr");
-
-
-
+		topics.add("roar");
+		topics.add("collections");
 	}
 	
 	public Method checkRelavancy(String input) throws NoSuchMethodException, SecurityException {
@@ -25,10 +24,17 @@ public class IrrelavantTopic {
 		String[] textInput = input.split(" ");
 		for(int i = 0; i < textInput.length; i++) {
 			keyword = textInput[i];
-			if(topics.contains(keyword)) {
+			switch (keyword) {
+				case "who": case "what": case "where": case "when": case "how":
+				hasQuestion = true; wHquestion = keyword; break;
+				default: break;
+			}
+			if (topics.contains(keyword)) {
 				// If the String array contains any keyword; run class method
-				String methodRunner = topics.get(topics.indexOf(keyword))+".runTopic()";
+				String methodRunner = topics.get(topics.indexOf(keyword))+".runTopic(" + wHquestion +")";
+				System.out.println(methodRunner);
 				runTopic = obj.getClass().getMethod(methodRunner);
+				
 				return runTopic;
 			}
 
