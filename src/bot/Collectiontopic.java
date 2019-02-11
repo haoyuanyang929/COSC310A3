@@ -7,7 +7,6 @@ static int mathtest;
 	public static void main(String[] args) { //this is the main collection discussion.
 		// TODO Auto-generated method stub
 		Scanner maininput = new Scanner(System.in);
-		System.out.println("got to collection class");
 		String userinput = (maininput.nextLine()).toLowerCase();
 		
 		//asking what favorite type of rocks

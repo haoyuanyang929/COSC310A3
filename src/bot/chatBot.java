@@ -26,9 +26,9 @@ public class chatBot {
 		String startoption;
 		System.out.println("..........."); //spacer
 		System.out.println("Curious to know what I can talk about? Have a list"); //prints list of topics
-//		System.out.println(thinking());	  ************************************************
-//		System.out.println(thinking());   *ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
-//		System.out.println(thinking());   ************************************************
+		System.out.println(thinking());	  //************************************************
+		System.out.println(thinking());   //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
+		System.out.println(thinking());   //************************************************
 		System.out.println("..........."); //spacer
 		System.out.println("We can test how well your roar is!");
 		System.out.println("Or we can talk about food");
@@ -38,7 +38,7 @@ public class chatBot {
 		System.out.println("INSERT TOPIC 4 happens to be something that interests me");
 		System.out.println("Or maybe you want to talk about INSERT TOPIC 5");
 		System.out.println("Or if you want to get to know me thats fine too!");
-		//System.out.println(thinking());
+		System.out.println(thinking());
 		
 		
 		//checking what they are talking about.
@@ -90,15 +90,15 @@ public class chatBot {
 		}
 	}
 	
-//	public static String thinking(){ //prints a line of dots after 1.5 seconds to mimic thinking animation
-//		long curtime = System.currentTimeMillis();
-//		long waittime1 = curtime + 150;
-//		while (curtime != waittime1){				************************************************
-//			 curtime = System.currentTimeMillis();  *ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
-//		}                                           ************************************************
-//		 return "............";
-//
-//	}
+	public static String thinking(){ //prints a line of dots after 1.5 seconds to mimic thinking animation
+		long curtime = System.currentTimeMillis();
+		long waittime1 = curtime + 150;
+		while (curtime != waittime1){				//************************************************
+			 curtime = System.currentTimeMillis();  //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
+		}                                           //************************************************
+		 return "............";
+
+	}
 	//CHECKING THE TOPIC
 	public static boolean checktopic(String top) { //grabs the topic, to save space this is used fo most topics
 		Scanner topche = new Scanner(System.in);
