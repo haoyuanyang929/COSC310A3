@@ -40,9 +40,27 @@ public class MeandYouEric implements TopicQuestions {
 		// TODO Auto-generated method stub
 		
 	}
+
 	@Override
-	public void runTopic() {
+	public void runTopic(String input) {
 		// TODO Auto-generated method stub
+		switch (input) {
+			case "what": 
+				whatQuestion();
+				break;
+			case "where":
+				whereQuestion();
+				break;
+			case "when":
+				whenQuestion();
+				break;
+			case "why":
+				whyQuestion();
+				break;
+			case "how":
+				howQuestion();
+				break;	
+		}
 		
 	}
 
