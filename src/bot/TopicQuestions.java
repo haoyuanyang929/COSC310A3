@@ -1,6 +1,8 @@
 package bot;
 
 public interface TopicQuestions {
+	public abstract void runTopic();
+	
 	public void whoQuestion();
 	public void whatQuestion();
 	public void whereQuestion();
