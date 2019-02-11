@@ -6,7 +6,7 @@ public class chatBot {
 	static String checkstring;
 	public static void main(String args[]) {
 		//added a cute little printing thing. lemme know thoughts. keep it until we get GUI
-		//Loadingscrean.main(args); 
+		Loadingscrean.main(args); 
 		
 		System.out.println("ROAr roar roooar roar rrrroooaaaarrr RoaaaaaaaaaaaaaaaAAArrArArAr");
 		System.out.println("Welcome to the Dino-Bot, Please Enter the name you would like to be called by.");
