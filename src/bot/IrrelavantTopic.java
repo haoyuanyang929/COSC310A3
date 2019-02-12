@@ -19,8 +19,7 @@ public class IrrelavantTopic {
 		topics.add("Collectiontopic");
 	}
 	
-	public void checkRelavancy(String input) throws NoSuchMethodException, SecurityException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		System.out.println("ohyay");
+	public void checkRelavancy(String input) throws NoSuchMethodException, SecurityException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
 		if(input.contains("quit") || input.contains("leave") || input.contains("stop")) {
 			System.out.println("Thank you so much for talking to me! Have a good day!");
 			System.exit(0);
@@ -33,21 +32,18 @@ public class IrrelavantTopic {
 			keyword = textInput[i];
 			switch (keyword) {
 				case "who": case "what": case "where": case "when": case "how":
-				hasQuestion = true; wHquestion = keyword; break;
+				hasQuestion = true; wHquestion=keyword; break;
 				default: break;
 			}
-			System.out.println(keyword);
-			
 			if (topics.contains(keyword)) {
 				// If the String array contains any keyword; run class method
-				Class tpic = Class.forName(keyword);
+				String cls = "bot."+keyword;
+				Class tpic = Class.forName(cls);
 				Method methodRunner = tpic.getMethod("runTopic", String.class);
-				System.out.println(methodRunner.toString());
 				
-				methodRunner.invoke(tpic, input);
+				methodRunner.invoke(tpic.getConstructor().newInstance(), input);
 				
 			}
-
 		}
 		
 		// - set up for irrelavant topics = "i dont understand"
@@ -55,7 +51,8 @@ public class IrrelavantTopic {
 	}
 	
 	public String getwHquestion() {
-		return wHquestion;
+			return wHquestion;
+		
 	}
 		
 	/**
