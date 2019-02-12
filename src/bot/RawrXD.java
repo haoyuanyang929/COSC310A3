@@ -14,7 +14,7 @@ public class RawrXD extends chatBot{
 	
 	public static void roargrab() { //main method to grab users input then sort it
 		System.out.println(".............");
-		System.out.println("Let's here that roar!");
+		System.out.println("Let's hear that roar!");
 		Scanner roar = new Scanner(System.in);
 		String yourroar = roar.nextLine();
 		String[] sentencecheck = yourroar.split("\\s+"); //splitting it up to see if the user is saying something else

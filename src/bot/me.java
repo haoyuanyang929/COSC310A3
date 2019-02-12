@@ -5,14 +5,12 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class me implements TopicQuestions {
-	
-	public me () {
-		
-	};
+	IrrelavantTopic irrTopic;
+	public me () { irrTopic = chatBot.irrTopic;};
 	
 	Scanner in = new Scanner(System.in);
 	
-	IrrelavantTopic irrTopic = new IrrelavantTopic();
+	
 	
 	String[] who = {"I am a dinosaur.", "I am Tee-Tee.", "I am a T-rex. You can call me Tee-Tee.", "I am a ancient giant chicken.", "You are my lunch.", "You are a human and also my lunch.", "You are " /*user name*/}; 
 	String[] what = {"I am a dinosaur.", "I am Tee-Tee.", "I am a T-rex. You can call me Tee-Tee.", "I am a ancient giant chicken.", "I can eat, eat, and… Talk to you.", "I like food and other things.", "It's "/*today date*/, "It's " /*today's day*/};
@@ -25,10 +23,9 @@ public class me implements TopicQuestions {
 
 	@Override
 	public void runTopic(String input) {
-		// TODO Auto-generated method stub
 		String wHquestion = irrTopic.getwHquestion();
 		switch (wHquestion) {
-			case "what": 
+			case "what":
 				whatQuestion(input);
 				break;
 			case "where":
