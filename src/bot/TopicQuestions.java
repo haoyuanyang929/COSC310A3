@@ -8,11 +8,11 @@ public interface TopicQuestions {
 	and run the respective question method
 	**/
 	
-	public void whoQuestion();
-	public void whatQuestion();
-	public void whereQuestion();
-	public void whenQuestion();
-	public void whyQuestion();
-	public void howQuestion();
+	public void whoQuestion(String input);
+	public void whatQuestion(String input);
+	public void whereQuestion(String input);
+	public void whenQuestion(String input);
+	public void whyQuestion(String input);
+	public void howQuestion(String input);
 	
 }
