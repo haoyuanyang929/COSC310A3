@@ -6,7 +6,7 @@ public class food implements TopicQuestions {
 		String[] where = {"In my cave", "In Taiwan"};
 		String[] who = {"Sometimes with myself", "Sometimes with other dinosaurs", "by myself", "The owner."};
 		String[] how = {"four times", "It's so delicious", "By my hand", "It's a combination of tea and milk and tapioca balls.", "I like it half sweet."};
-		String[] why = {};
+		String[] why = {"because it's so delicious"};
 		String[] when = {};		
 	}
 
