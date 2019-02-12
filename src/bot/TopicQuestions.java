@@ -7,12 +7,11 @@ public interface TopicQuestions {
 	which will be the words /who / what/ where / when / why / how
 	and run the respective question method
 	**/
-	
-	public void whoQuestion(String input);
-	public void whatQuestion(String input);
-	public void whereQuestion(String input);
-	public void whenQuestion(String input);
-	public void whyQuestion(String input);
-	public void howQuestion(String input);
+	public abstract void whoQuestion(String input);
+	public abstract void whatQuestion(String input);
+	public abstract void whereQuestion(String input);
+	public abstract void whenQuestion(String input);
+	public abstract void whyQuestion(String input);
+	public abstract void howQuestion(String input);
 	
 }
