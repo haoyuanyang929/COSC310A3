@@ -20,8 +20,14 @@ public class IrrelavantTopic {
 	}
 	
 	public Method checkRelavancy(String input) throws NoSuchMethodException, SecurityException {
+		if(input.contains("quit") || input.contains("leave") || input.contains("stop")) {
+			System.out.println("Thank you so much for talking to me! Have a good day!");
+			System.exit(0);
+			return null;
+		}
 		//check for keyword
 		String[] textInput = input.split(" ");
+				
 		for(int i = 0; i < textInput.length; i++) {
 			keyword = textInput[i];
 			switch (keyword) {
@@ -39,10 +45,16 @@ public class IrrelavantTopic {
 			}
 
 		}
+		
+		// - set up for irrelavant topics = "i dont understand"
 
 		return null;
 	}
 	
+	public String getwHquestion() {
+		return wHquestion;
+	}
+		
 	/**
 	if(startoption.contains("roar")) { //if it contains roar jump to roar file
 		boolean grab = checktopic("roar"); //checking topic for user confirmation
