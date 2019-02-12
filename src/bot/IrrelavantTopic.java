@@ -16,7 +16,7 @@ public class IrrelavantTopic {
 		topics.add("hobbies");
 		topics.add("me");
 		topics.add("roar");
-		topics.add("collections");
+		topics.add("collection");
 	}
 	
 	public Method checkRelavancy(String input) throws NoSuchMethodException, SecurityException {
@@ -31,7 +31,7 @@ public class IrrelavantTopic {
 			}
 			if (topics.contains(keyword)) {
 				// If the String array contains any keyword; run class method
-				String methodRunner = topics.get(topics.indexOf(keyword))+".runTopic(" + wHquestion +")";
+				String methodRunner = topics.get(topics.indexOf(keyword))+".runTopic(" + input + ","+ wHquestion +")";
 				System.out.println(methodRunner);
 				runTopic = obj.getClass().getMethod(methodRunner);
 				
@@ -42,6 +42,7 @@ public class IrrelavantTopic {
 
 		return null;
 	}
+	
 	/**
 	if(startoption.contains("roar")) { //if it contains roar jump to roar file
 		boolean grab = checktopic("roar"); //checking topic for user confirmation

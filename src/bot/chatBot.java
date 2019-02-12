@@ -1,12 +1,18 @@
 package bot;
+import java.lang.reflect.*;
 import java.util.Scanner;
 public class chatBot {
 
 	static String name; 
 	static String checkstring;
+	static IrrelavantTopic irrTopic;
+	
 	public static void main(String args[]) {
 		//added a cute little printing thing. lemme know thoughts. keep it until we get GUI
+
+		irrTopic =  = new IrrelavantTopic();
 		Loadingscrean.main(args); 
+
 		
 		System.out.println("ROAr roar roooar roar rrrroooaaaarrr RoaaaaaaaaaaaaaaaAAArrArArAr");
 		System.out.println("Welcome to the Dino-Bot, Please Enter the name you would like to be called by.");
@@ -42,9 +48,16 @@ public class chatBot {
 		
 		
 		//checking what they are talking about.
-		
+
 		
 		startoption = (inscan.nextLine()).toLowerCase(); //scanning an input
+		try {
+			Method runTopic = irrTopic.checkRelavancy(startoption);
+			runTopic.invoke();
+		} catch (NoSuchMethodException | SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//roar else
 		
 	}
