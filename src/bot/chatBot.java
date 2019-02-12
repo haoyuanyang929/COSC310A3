@@ -10,8 +10,8 @@ public class chatBot {
 	public static void main(String args[]) {
 		//added a cute little printing thing. lemme know thoughts. keep it until we get GUI
 
-		irrTopic =  = new IrrelavantTopic();
-		Loadingscrean.main(args); 
+		irrTopic = new IrrelavantTopic();
+		//Loadingscrean.main(args); 
 
 		
 		System.out.println("ROAr roar roooar roar rrrroooaaaarrr RoaaaaaaaaaaaaaaaAAArrArArAr");
@@ -32,9 +32,9 @@ public class chatBot {
 		String startoption;
 		System.out.println("..........."); //spacer
 		System.out.println("Curious to know what I can talk about? Have a list"); //prints list of topics
-		System.out.println(thinking());	  //************************************************
-		System.out.println(thinking());   //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
-		System.out.println(thinking());   //************************************************
+//		System.out.println(thinking());	  //************************************************
+//		System.out.println(thinking());   //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
+//		System.out.println(thinking());   //************************************************
 		System.out.println("..........."); //spacer
 		System.out.println("We can test how well your roar is!");
 		System.out.println("Or we can talk about food");
@@ -51,11 +51,13 @@ public class chatBot {
 
 		
 		startoption = (inscan.nextLine()).toLowerCase(); //scanning an input
+		//checktopic(startoption); - keep checktopic for roar contest
 		try {
-			Method runTopic = irrTopic.checkRelavancy(startoption);
-			runTopic.invoke();
-		} catch (NoSuchMethodException | SecurityException e) {
+			System.out.println("ok");
+			irrTopic.checkRelavancy(startoption);
+		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
+			System.out.println("not ok");
 			e.printStackTrace();
 		}
 		//roar else
@@ -77,6 +79,7 @@ public class chatBot {
 		if(top.equals("roar")) {
 			System.out.println("Sorry! My dino-speech is better than my english, did you want to have a roaring contest?"); //maybe you didn't mean to go here
 		}
+		//no need for this after fixing irrTopic
 		else {
 			System.out.println("Sorry! My dino-speech is better than my english, did you want to talk about " + top + " ?"); //maybe you didn't mean to go here
 		}

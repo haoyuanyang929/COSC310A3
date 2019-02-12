@@ -16,14 +16,15 @@ public class IrrelavantTopic {
 		topics.add("hobbies");
 		topics.add("me");
 		topics.add("roar");
-		topics.add("collection");
+		topics.add("Collectiontopic");
 	}
 	
-	public Method checkRelavancy(String input) throws NoSuchMethodException, SecurityException {
+	public void checkRelavancy(String input) throws NoSuchMethodException, SecurityException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		System.out.println("ohyay");
 		if(input.contains("quit") || input.contains("leave") || input.contains("stop")) {
 			System.out.println("Thank you so much for talking to me! Have a good day!");
 			System.exit(0);
-			return null;
+			return;
 		}
 		//check for keyword
 		String[] textInput = input.split(" ");
@@ -35,20 +36,22 @@ public class IrrelavantTopic {
 				hasQuestion = true; wHquestion = keyword; break;
 				default: break;
 			}
+			System.out.println(keyword);
+			
 			if (topics.contains(keyword)) {
 				// If the String array contains any keyword; run class method
-				String methodRunner = topics.get(topics.indexOf(keyword))+".runTopic(" + input + ","+ wHquestion +")";
-				System.out.println(methodRunner);
-				runTopic = obj.getClass().getMethod(methodRunner);
+				Class tpic = Class.forName(keyword);
+				Method methodRunner = tpic.getMethod("runTopic", String.class);
+				System.out.println(methodRunner.toString());
 				
-				return runTopic;
+				methodRunner.invoke(tpic, input);
+				
 			}
 
 		}
 		
 		// - set up for irrelavant topics = "i dont understand"
 
-		return null;
 	}
 	
 	public String getwHquestion() {
