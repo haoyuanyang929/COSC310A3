@@ -21,7 +21,7 @@ public class me implements TopicQuestions {
 			"I am a ancient giant chicken.", "I can eat, eat, and… Talk to you.", "I like food and other things.",
 			"It's "/* today date */, "It's " /* today's day */ };
 	String[] when = { "During luchtime", "During dinner time.", "Perhaps during breakfast time.", "Two days ago.",
-			"It’s Triassic Period.", "It's "/* today date */, "It's " /* today's day */, "250 million years later." };
+			"It’s Triassic Period.", "It's "/* today date */, "250 million years later." };
 	String[] where = { "You are at my place.", "You are in my stomach.", "You are in the middle of a big continent." };
 	String[] how = { "I am starving", "I am good.", "How rude! I am 35 years old", "My age is a secret.",
 			"I am 40 ft tall.", "I am 12.3 meters tall.", "He died from a fireball from the sky." };
@@ -152,8 +152,8 @@ public class me implements TopicQuestions {
 		// 3"Two days ago.", 
 		// 4"It’s Triassic Period.",
 		// 5"It's "/*today date*/,
-		// 6"It's " /*today's day*/,
-		// 7"250 million years later." */
+		//
+		// 6"250 million years later." */
 		if (input.contains("eat") || input.contains("food") || input.contains("meal")) {
 			int i;
 			double a = Math.random() * 10 / 3;
@@ -161,14 +161,12 @@ public class me implements TopicQuestions {
 			else if (a > 1 && a <= 2)i = 1;
 			else i = 2;
 			System.out.println(when[i]);// 0,1,2
-		} else if (input.contains(s)) {
+		} else if (input.contains("did") || input.contains("was") || input.contains("were")) {
 			System.out.println(when[3]);
-		} else if (input.contains("")) {
-			
-		} else if (input.contains(s)) {
-			
-		} else if ( input.contains(s)) {
-			
+		} else if (input.contains("are") || input.contains("is") || input.contains("does")|| input.contains("date")) {
+			SimpleDateFormat dayFormat = new SimpleDateFormat("MM, DD yyyy");
+			Date date = new Date();
+			System.out.println(when[5] + dayFormat.format(date));
 		} else if ( input.contains("will") || input.contains("2019")) {
 			System.out.println(when[7]);
 		} else {
