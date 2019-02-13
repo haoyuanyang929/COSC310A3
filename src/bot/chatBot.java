@@ -28,8 +28,7 @@ public class chatBot {
 	}
 	
 	public static void inputfield(){ //input method. Subject to change like crazy
-		Scanner inscan = new Scanner(System.in);
-		String startoption;
+		
 		System.out.println("..........."); //spacer
 		System.out.println("Curious to know what I can talk about? Have a list"); //prints list of topics
 //		System.out.println(thinking());	  //************************************************
@@ -48,19 +47,31 @@ public class chatBot {
 		
 		
 		//checking what they are talking about.
-
+		boolean continueConv;
+		do {
+		continueConv = conversation();
+		}while(continueConv!=false);
+		if (continueConv == false) {
+			System.exit(0);
+		}
+		//roar else
 		
+	}
+	
+	public static boolean conversation() {
+		Scanner inscan = new Scanner(System.in);
+		String startoption;
 		startoption = (inscan.nextLine()).toLowerCase(); //scanning an input
 		checktopic(startoption); // - keep checktopic for roar contest
 		try {
-			irrTopic.checkRelavancy(startoption);
+			return irrTopic.checkRelavancy(startoption);
+			
 		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | ClassNotFoundException | InstantiationException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Sorry! There seems to be an issue.");
 			System.out.println("Please restart the program.");
+			return false;
 		}
-		//roar else
-		
 	}
 	
 	public static String thinking(){ //prints a line of dots after 1.5 seconds to mimic thinking animation
