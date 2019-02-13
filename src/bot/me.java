@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class me implements TopicQuestions {
+public class me extends chatBot implements TopicQuestions {
 	IrrelavantTopic irrTopic;
 
 	public me() {
@@ -19,7 +19,7 @@ public class me implements TopicQuestions {
 			"You are " /* user name */ };
 	String[] what = { "I am a dinosaur.", "I am Tee-Tee.", "I am a T-rex. You can call me Tee-Tee.",
 			"I am a ancient giant chicken.", "I can eat, eat, and… Talk to you.", "I like food and other things.",
-			"It's "/* today date */, "It's " /* today's day */ };
+			"It's "/* today date */, "It's " /* today's day */, "You are " /* user name */ };
 	String[] when = { "During luchtime", "During dinner time.", "Perhaps during breakfast time.", "Two days ago.",
 			"It’s Triassic Period.", "It's "/* today date */, "250 million years later." };
 	String[] where = { "You are at my place.", "You are in my stomach.", "You are in the middle of a big continent." };
@@ -76,8 +76,7 @@ public class me implements TopicQuestions {
 				i = 5;
 			else {
 				i = 6;
-				String userName = in.nextLine();
-				who[6] = who[6] + userName;
+				who[6] = who[6] + name;
 			}
 			System.out.println(who[i]);// 4, 5, 6
 		} else {
@@ -112,7 +111,9 @@ public class me implements TopicQuestions {
 			// week day code
 			DateFormatSymbols dfs = new DateFormatSymbols();
 			System.out.println(what[7] + dfs.getWeekdays());
-		} else {
+		} else if (input.contains("name") && input.contains("my")){
+			System.out.println(what[8] + name);
+		}else {
 			System.out.println("My knowledge is limited. Can you reword it?");
 		}
 
@@ -121,14 +122,14 @@ public class me implements TopicQuestions {
 	@Override
 	public void whereQuestion(String input) {
 		// TODO Auto-generated method stub
-		//where = { 0 "You are at my place.", 
+//		where = { 0 "You are at my place.", 
 //					1 "You are in my stomach.", 
 //					2 "You are in the middle of a big continent." };
 		if ( input.contains("i")) {
 			int i;
-			double a = Math.random() * 10 / 3;
-			if (a <= 1) i = 0;
-			else if (a > 1 && a <= 2)i = 1;
+			double a = Math.random() * 3;
+			if (a == 0) i = 0;
+			else if (a == 1)i = 1;
 			else i = 2;
 			System.out.println(where[i]);// 0,1,2
 		}else if (input.contains("we")){
@@ -187,12 +188,12 @@ public class me implements TopicQuestions {
 //				7"Because I am a dinosaur." };
 		if (input.contains("eat") || input.contains("food")) {
 			int i;
-			double a = Math.random() * 100 / 4;
-			if (a <= 25)
+			double a = Math.random() * 4;
+			if (a == 0)
 				i = 1;
-			else if (a > 25 && a <= 50)
+			else if (a == 1)
 				i = 2;
-			else if (a > 50 && a <= 75)
+			else if (a == 2)
 				i = 5;
 			else
 				i = 7;
