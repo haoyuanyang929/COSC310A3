@@ -60,8 +60,7 @@ public class chatBot {
 	
 	public static boolean conversation() {
 		Scanner inscan = new Scanner(System.in);
-		String startoption;
-		startoption = (inscan.nextLine()).toLowerCase(); //scanning an input
+		String startoption = (inscan.nextLine()).toLowerCase(); //scanning an input
 		checktopic(startoption); // - keep checktopic for roar contest
 		try {
 			return irrTopic.checkRelavancy(startoption);

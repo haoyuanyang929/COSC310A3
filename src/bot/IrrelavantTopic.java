@@ -20,7 +20,7 @@ public class IrrelavantTopic {
 		topics.add(foodRelated);
 		topics.add(hobbies);
 		topics.add(me);
-	//	topics.add();
+		topics.add(collection);
 	}
 	
 	public boolean checkRelavancy(String input) throws NoSuchMethodException, SecurityException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
