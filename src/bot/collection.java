@@ -2,12 +2,12 @@ package bot;
 
 import java.util.Scanner;
 
-public class collection {
+public class collection implements TopicQuestions {
 static int mathtest;
-	public static void main(String[] args) {
+	public void runTopic(String input)  {
 		// TODO Auto-generated method stub
 		Scanner maininput = new Scanner(System.in);
-		String userinput = (maininput.nextLine()).toLowerCase();
+		String userinput = input;
 		
 		//asking what favorite type of rocks
 		if((userinput.contains("what")) && userinput.contains("favorite") && (userinput.contains("rock") || userinput.contains("rocks"))){
@@ -159,7 +159,8 @@ static int mathtest;
 		else { //when you say something thats not precoded.
 			System.out.println("I am sorry, I don't understand that.");
 		}
-		main(null);
+		maininput.close();
+		return;
 	}
 	
 	
@@ -220,5 +221,53 @@ static int mathtest;
 		default:
 			System.out.println("Hmmmm I'm sorry I don't think I know what " + fav + " is. Sorry!");
 		}
+	}
+
+
+
+	@Override
+	public void whoQuestion(String input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void whatQuestion(String input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void whereQuestion(String input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void whenQuestion(String input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void whyQuestion(String input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void howQuestion(String input) {
+		// TODO Auto-generated method stub
+		
 	}
 }
