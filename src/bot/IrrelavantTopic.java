@@ -9,21 +9,24 @@ public class IrrelavantTopic {
 	boolean topicExists, hasQuestion;
 	Method runTopic;
 
-	ArrayList<String> topics = new ArrayList<String>();
-
+	ArrayList<ArrayList<String>> topics = new ArrayList<ArrayList<String>>();
+	ArrayList<String> foodRelated = new ArrayList<String>(){{add("food");add("eat");add("drink");add("tea");}};
+	ArrayList<String> hobbies = new ArrayList<String>(){{add("lotr");add("reading");add("like");add("books");add("hobbies");}};
+	ArrayList<String> me = new ArrayList<String>(){{add("me");add("you");add("name");add("dinosaur");}};
+	ArrayList<String> collection = new ArrayList<String>(){{add("collection");add("rock");add("enjoy");add("dinosaur");}};
+	
+	
 	IrrelavantTopic(){
-		topics.add("food");
-		topics.add("hobbies");
-		topics.add("me");
-		topics.add("roar");
-		topics.add("collection");
+		topics.add(foodRelated);
+		topics.add(hobbies);
+		topics.add(me);
+		topics.add(collection);
 	}
 	
-	public Method checkRelavancy(String input) throws NoSuchMethodException, SecurityException {
+	public boolean checkRelavancy(String input) throws NoSuchMethodException, SecurityException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
 		if(input.contains("quit") || input.contains("leave") || input.contains("stop")) {
 			System.out.println("Thank you so much for talking to me! Have a good day!");
-			System.exit(0);
-			return null;
+			return false;
 		}
 		//check for keyword
 		String[] textInput = input.split(" ");
@@ -32,27 +35,31 @@ public class IrrelavantTopic {
 			keyword = textInput[i];
 			switch (keyword) {
 				case "who": case "what": case "where": case "when": case "how":
-				hasQuestion = true; wHquestion = keyword; break;
+				hasQuestion = true; wHquestion=keyword; break;
 				default: break;
 			}
-			if (topics.contains(keyword)) {
-				// If the String array contains any keyword; run class method
-				String methodRunner = topics.get(topics.indexOf(keyword))+".runTopic(" + input + ","+ wHquestion +")";
-				System.out.println(methodRunner);
-				runTopic = obj.getClass().getMethod(methodRunner);
-				
-				return runTopic;
+			for(int j = 0; j < topics.size(); j++) {
+				if (topics.get(j).contains(keyword)) {
+					// If the String array contains any keyword; run class method
+					String cls = "bot."+topics.get(j).get(0);
+					Class tpic = Class.forName(cls);
+					Method methodRunner = tpic.getMethod("runTopic", String.class);
+					
+					methodRunner.invoke(tpic.getConstructor().newInstance(), input);
+					return true;
+				}
 			}
-
 		}
 		
+		System.out.println("Sorry, I don't understand that.");
+		return true;
 		// - set up for irrelavant topics = "i dont understand"
 
-		return null;
 	}
 	
 	public String getwHquestion() {
-		return wHquestion;
+			return wHquestion;
+		
 	}
 		
 	/**

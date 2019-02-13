@@ -5,13 +5,13 @@ public class chatBot {
 
 	static String name; 
 	static String checkstring;
-	static IrrelavantTopic irrTopic;
+	public static IrrelavantTopic irrTopic;
 	
 	public static void main(String args[]) {
 		//added a cute little printing thing. lemme know thoughts. keep it until we get GUI
 
-		irrTopic =  = new IrrelavantTopic();
-		Loadingscrean.main(args); 
+		irrTopic = new IrrelavantTopic();
+		//Loadingscrean.main(args); 
 
 		
 		System.out.println("ROAr roar roooar roar rrrroooaaaarrr RoaaaaaaaaaaaaaaaAAArrArArAr");
@@ -28,13 +28,12 @@ public class chatBot {
 	}
 	
 	public static void inputfield(){ //input method. Subject to change like crazy
-		Scanner inscan = new Scanner(System.in);
-		String startoption;
+		
 		System.out.println("..........."); //spacer
 		System.out.println("Curious to know what I can talk about? Have a list"); //prints list of topics
-		System.out.println(thinking());	  //************************************************
-		System.out.println(thinking());   //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
-		System.out.println(thinking());   //************************************************
+		System.out.println(thinking());	  
+		System.out.println(thinking());   
+		System.out.println(thinking());   
 		System.out.println("..........."); //spacer
 		System.out.println("We can test how well your roar is!");
 		System.out.println("Or we can talk about food");
@@ -48,58 +47,75 @@ public class chatBot {
 		
 		
 		//checking what they are talking about.
-
-		
-		startoption = (inscan.nextLine()).toLowerCase(); //scanning an input
-		try {
-			Method runTopic = irrTopic.checkRelavancy(startoption);
-			runTopic.invoke();
-		} catch (NoSuchMethodException | SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		boolean continueConv;
+		do {
+		continueConv = conversation();
+		}while(continueConv!=false);
+		if (continueConv == false) {
+			System.exit(0);
 		}
 		//roar else
 		
 	}
 	
+	public static boolean conversation() {
+		Scanner inscan = new Scanner(System.in);
+		String startoption = (inscan.nextLine()).toLowerCase(); //scanning an input
+		checktopic(startoption); // - keep checktopic for roar contest
+		try {
+			return irrTopic.checkRelavancy(startoption);
+			
+		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | ClassNotFoundException | InstantiationException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Sorry! There seems to be an issue.");
+			System.out.println("Please restart the program.");
+			return false;
+		}
+	}
+	
 	public static String thinking(){ //prints a line of dots after 1.5 seconds to mimic thinking animation
 		long curtime = System.currentTimeMillis();
 		long waittime1 = curtime + 150;
-		while (curtime != waittime1){				//************************************************
-			 curtime = System.currentTimeMillis();  //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
-		}                                           //************************************************
+		while (curtime != waittime1){				
+			 curtime = System.currentTimeMillis();  
+		}                                           
 		 return "............";
 
 	}
 	//CHECKING THE TOPIC
-	public static boolean checktopic(String top) { //grabs the topic, to save space this is used fo most topics
+	public static void checktopic(String top) { //grabs the topic, to save space this is used fo most topics
 		Scanner topche = new Scanner(System.in);
 		if(top.equals("roar")) {
 			System.out.println("Sorry! My dino-speech is better than my english, did you want to have a roaring contest?"); //maybe you didn't mean to go here
+			String topicyesno = (topche.nextLine()).toLowerCase();
+			String[] topicsentence = topicyesno.split(" "); //splitting it up
+			for(int i = 0; i < topicsentence.length; i++){ //
+				String topgrabbed = topicsentence[i];
+				switch(topgrabbed){ //switch parsing string to see what happens
+				
+				case "yes": case "yup": case "okay": case "sure": case "ok":
+					RawrXD.main(null); // plays roaring contest
+				case "no": case "nope": case "nah": case "never":
+					System.out.println("No? Okay then.");
+					inputfield(); //returns false to where it was called.
+					
+				default:
+					System.out.println("I still don't understand."); //default incase you spam the keyboard
+					
+				}
+				topche.close();
+				inputfield();
+			}
 		}
+		//no need for this after fixing irrTopic
+		/***
 		else {
 			System.out.println("Sorry! My dino-speech is better than my english, did you want to talk about " + top + " ?"); //maybe you didn't mean to go here
 		}
-		String topicyesno = (topche.nextLine()).toLowerCase();
-		String[] topicsentence = topicyesno.split(" "); //splitting it up
-		for(int i = 0; i < topicsentence.length; i++){ //
-			String topgrabbed = topicsentence[i];
-			switch(topgrabbed){ //switch parsing string to see what happens
-			
-			case "yes": case "yup": case "okay": case "sure": case "ok":
-				return true; //returns true to where it was called
-				
-			case "no": case "nope": case "nah": case "never":
-				System.out.println("No? Okay then.");
-				return false; //returns false to where it was called.
-				
-			default:
-				System.out.println("I still don't understand."); //default incase you spam the keyboard
-				
-			}
-		}
+		
 		topche.close();
 		return false; //default case is to return false.
+		***/
 	}
 	
 }
