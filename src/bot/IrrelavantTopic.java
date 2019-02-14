@@ -3,7 +3,7 @@ package bot;
 import java.lang.reflect.*;
 import java.util.*;
 
-public class IrrelavantTopic {
+public class IrrelavantTopic extends chatBot{
 	Object obj;
 	String keyword, wHquestion;
 	boolean topicExists, hasQuestion;
@@ -19,8 +19,8 @@ public class IrrelavantTopic {
 	IrrelavantTopic(){
 		topics.add(foodRelated);
 		topics.add(hobbies);
-		topics.add(me);
 		topics.add(collection);
+		topics.add(me);
 	}
 	
 	public boolean checkRelavancy(String input) throws NoSuchMethodException, SecurityException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
