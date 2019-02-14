@@ -13,8 +13,8 @@ public class IrrelavantTopic {
 	ArrayList<ArrayList<String>> topics = new ArrayList<ArrayList<String>>();
 	ArrayList<String> foodRelated = new ArrayList<String>(){{add("food");add("eat");add("drink");add("tea");}};
 	ArrayList<String> hobbies = new ArrayList<String>(){{add("lotr");add("reading");add("like");add("books");add("hobbies");}};
-	ArrayList<String> collection = new ArrayList<String>(){{add("collection");add("collect");add("rock");add("rocks");add("bone");add("bones");add("plants");add("plant");add("gem");add("gems");add("dangerous");}};
-	ArrayList<String> me = new ArrayList<String>(){{add("me");add("name");add("dinosaur");add("date");add("tall");add("age");add("day");add("old");add("die");add("excellent");add("good");}};
+	ArrayList<String> me = new ArrayList<String>(){{add("me");add("i");add("name");add("dinosaur");add("date");add("tall");add("age");add("day");add("old");add("die");add("excellent");add("good");add("who are you");add("who am i");}};
+	ArrayList<String> collection = new ArrayList<String>(){{add("collection");add("rock");add("enjoy");add("dinosaur");}};
 	
 	
 	IrrelavantTopic(){
@@ -108,3 +108,4 @@ public class IrrelavantTopic {
 	}
 	***/
 }
+

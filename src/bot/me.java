@@ -55,24 +55,24 @@ public class me extends chatBot implements TopicQuestions {
 	@Override
 	public void whoQuestion(String input) {
 		// TODO Auto-generated method stub
-		if (input.contains("you")) {
+		if (input.contains("who are you")) {
 			int i;
-			double a = Math.random() * 100 / 4;
-			if (a <= 25)
+			int a = (int)Math.random() * 4;
+			if (a == 0)
 				i = 0;
-			else if (a > 25 && a <= 50)
+			else if (a == 1)
 				i = 1;
-			else if (a > 50 && a <= 75)
+			else if (a == 2)
 				i = 2;
 			else
 				i = 3;
 			System.out.println(who[i]);// 0,1,2,3
-		} else if (input.contains("i")) {
+		} else if (input.contains("who am i")) {
 			int i;
-			double a = Math.random() * 10 / 3;
-			if (a <= 1)
+			int a = (int)Math.random() * 3;
+			if (a == 0 )
 				i = 4;
-			else if (a > 1 && a <= 2)
+			else if ( a == 1)
 				i = 5;
 			else {
 				i = 6;
@@ -91,10 +91,10 @@ public class me extends chatBot implements TopicQuestions {
 			System.out.println(what[1]);
 		} else if (input.contains("you")) {
 			int i;
-			double a = Math.random() * 10 / 3;
-			if (a <= 1)
+			int a = (int)Math.random() * 3;
+			if (a == 0 )
 				i = 0;
-			else if (a > 1 && a <= 2)
+			else if (a == 2)
 				i = 2;
 			else
 				i = 3;
@@ -127,14 +127,14 @@ public class me extends chatBot implements TopicQuestions {
 //					2 "You are in the middle of a big continent." };
 		if ( input.contains("i")) {
 			int i;
-			double a = Math.random() * 3;
+			int a = (int)Math.random() * 3;
 			if (a == 0) i = 0;
 			else if (a == 1)i = 1;
 			else i = 2;
 			System.out.println(where[i]);// 0,1,2
 		}else if (input.contains("we")){
 			int i;
-			double a = Math.random() * 100 / 2;
+			int a = (int) Math.random() * 2;
 			if (a <= 50) i = 0;
 			else i = 2;
 			System.out.println(where[i]);// 0,2
@@ -157,9 +157,9 @@ public class me extends chatBot implements TopicQuestions {
 		// 6"250 million years later." */
 		if (input.contains("eat") || input.contains("food") || input.contains("meal")) {
 			int i;
-			double a = Math.random() * 10 / 3;
-			if (a <= 1) i = 0;
-			else if (a > 1 && a <= 2)i = 1;
+			int a = (int)Math.random() * 3;
+			if (a == 0) i = 0;
+			else if (a == 1)i = 1;
 			else i = 2;
 			System.out.println(when[i]);// 0,1,2
 		} else if (input.contains("did") || input.contains("was") || input.contains("were")) {
@@ -188,7 +188,7 @@ public class me extends chatBot implements TopicQuestions {
 //				7"Because I am a dinosaur." };
 		if (input.contains("eat") || input.contains("food")) {
 			int i;
-			double a = Math.random() * 4;
+			int a = (int) Math.random() * 4;
 			if (a == 0)
 				i = 1;
 			else if (a == 1)
@@ -201,14 +201,14 @@ public class me extends chatBot implements TopicQuestions {
 			
 		}else if(input.contains("good") || input.contains("excellent")) {
 			int i;
-			double a = Math.random() * 100 / 2;
-			if (a <= 50) i = 3;
+			int a = (int)Math.random() *  2;
+			if (a == 0 ) i = 3;
 			else i = 4;
 			System.out.println(why[i]);// 3,4
 		}else {
 			int i;
-			double a = Math.random() * 100 / 2;
-			if (a <= 50) i = 0;
+			int a = (int)Math.random() * 2;
+			if (a == 0) i = 0;
 			else i = 7;
 			System.out.println(why[i]);// 0,7
 		}
@@ -225,27 +225,28 @@ public class me extends chatBot implements TopicQuestions {
 //				4"I am 40 ft tall.", 
 //				5"I am 12.3 meters tall.", 
 //				6"He died from a fireball from the sky." };
-		if (input.contains("you") && (input.contains("are") || input.contains("do"))) {
+		
+		if ( input.contains("age") || input.contains("old")) {
 			int i;
-			double a = Math.random() * 100 / 2;
-			if (a <= 50) i = 0;
-			else i = 1;
-			System.out.println(how[i]);// 0,1
-		} else if ( input.contains("age") || input.contains("old")) {
-			int i;
-			double a = Math.random() * 100 / 2;
-			if (a <= 50) i = 2;
+			int a = (int)Math.random() * 2;
+			if (a == 0) i = 2;
 			else i = 3;
 			System.out.println(how[i]);// 2,3
 		} else if ( input.contains("tall") || input.contains("long") || input.contains("big") || input.contains("size")) {
 			int i;
-			double a = Math.random() * 100 / 2;
-			if (a <= 50) i = 4;
+			int a = (int) Math.random() * 2;
+			if (a == 0) i = 4;
 			else i = 5;
 			System.out.println(how[i]);// 4,5
 		} else if ( input.contains("die") || input.contains("dead") || input.contains("died")) {
 			System.out.println(how[6]);
-		}else {
+		} else if (input.contains("you") && (input.contains("are") || input.contains("do"))) {
+			int i;
+			int a = (int) Math.random() * 2;
+			if (a == 0) i = 0;
+			else i = 1;
+			System.out.println(how[i]);// 0,1
+		} else {
 			System.out.println("My knowledge is limited. Can you reword it?");
 		}
 		 
