@@ -11,8 +11,8 @@ static int shmeegultest;
 		//saying lotr is good
 		if(usershmeegul.contains("like") || usershmeegul.contains("love") && usershmeegul.contains("lotr") || usershmeegul.contains("lord") && usershmeegul.contains("of") && usershmeegul.contains("the") && usershmeegul.contains("rings") || usershmeegul.contains("shmeegul")){
 			System.out.println("Lord of the Rings is great! Who is your favorite character?");
-			String userfav = (mainshmeegul.nextLine()).toLowerCase();
-			favoritecheck(userfav);
+			String charfav = (mainshmeegul.nextLine()).toLowerCase();
+			favoritechar(charfav);
 		}
 		//asking why he likes lotr
 		else if(usershmeegul.contains("why") && ((usershmeegul.contains("like")) || usershmeegul.contains("love"))) {
@@ -112,7 +112,7 @@ static int shmeegultest;
 	
 	
 	
-	public static void favoritecheck(String fav) { //checks to see if the chatbot knows your character
+	public static void favoritechar(String fav) { //checks to see if the chatbot knows your character
 		Scanner secondshmeegul = new Scanner(System.in);
 		String useryshmeegul = secondshmeegul.nextLine();
 		switch (fav) {
