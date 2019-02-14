@@ -82,16 +82,7 @@ public class me extends chatBot implements TopicQuestions {
 
 	@Override
 	public void whatQuestion(String input) {
-		if (input.contains("name")) {
-			System.out.println(what[1]);
-		} else if (input.contains("you")) {
-			int i;
-			double a = Math.random() * 10;
-			if (a <= 3 ) i = 0;
-			else if (a > 3 && a <= 6)i = 2;
-			else i = 3;
-			System.out.println(when[i]);// 0,2,3
-		} else if (input.contains("can") || input.contains("capable")) {
+		if (input.contains("can") || input.contains("capable")) {
 			System.out.println(what[4]);
 		} else if (input.contains("like")) {
 			System.out.println(what[5]);
@@ -105,7 +96,16 @@ public class me extends chatBot implements TopicQuestions {
 			System.out.println(what[7] + dfs.getWeekdays());
 		} else if (input.contains("name") && input.contains("my")){
 			System.out.println(what[8] + name);
-		}else {
+		} else if ((input.contains("you") || input.contains("your"))&& input.contains("name")) {
+			System.out.println(what[1]);
+		}else if (input.contains("you")) {
+			int i;
+			double a = Math.random() * 10;
+			if (a <= 3 ) i = 0;
+			else if (a > 3 && a <= 6)i = 2;
+			else i = 3;
+			System.out.println(when[i]);// 0,2,3
+		} else {
 			System.out.println("My knowledge is limited. Can you reword it?");
 		}
 
