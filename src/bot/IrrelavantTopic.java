@@ -20,11 +20,13 @@ public class IrrelavantTopic {
 	IrrelavantTopic(){
 		topics.add(foodRelated);
 		topics.add(hobbies);
-		topics.add(me);
 		topics.add(collection);
+		topics.add(me);
+
 	}
 	
 	public boolean checkRelavancy(String input) throws NoSuchMethodException, SecurityException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
+		hasQuestion = false;
 		if(input.contains("quit") || input.contains("leave") || input.contains("stop")) {
 			System.out.println("Thank you so much for talking to me! Have a good day!");
 			return false;
@@ -39,25 +41,22 @@ public class IrrelavantTopic {
 				case "who": case "what": case "where": case "when": case "how":
 				hasQuestion = true; wHquestion=keyword; break;
 				case "do":
-				doQuestion(); break;
+				doQuestion(input); return true;
 				default: break;
 			}
-			if(hasQuestion==true||input.contains("?")) {
-				for(int j = 0; j < topics.size(); j++) {
-					if (topics.get(j).contains(keyword)) {
-						// If the String array contains any keyword; run class method
-						String cls = "bot."+topics.get(j).get(0);
-						Class tpic = Class.forName(cls);
-						Method methodRunner = tpic.getMethod("runTopic", String.class);
-						
-						methodRunner.invoke(tpic.getConstructor().newInstance(), input);
-						return true;
-					}
+			for(int j = 0; j < topics.size(); j++) {
+				if (topics.get(j).contains(keyword)) {
+					// If the String array contains any keyword; run class method
+					String cls = "bot."+topics.get(j).get(0);
+					Class tpic = Class.forName(cls);
+					Method methodRunner = tpic.getMethod("runTopic", String.class);
+					
+					methodRunner.invoke(tpic.getConstructor().newInstance(), input);
+					return true;
 				}
 			}
 		}
-		
-		System.out.println("Sorry, I don't understand that.");
+		System.out.println("Sorry, I don't understand that.");	
 		return true;
 		// - set up for irrelavant topics = "i dont understand"
 
@@ -68,8 +67,14 @@ public class IrrelavantTopic {
 		
 	}
 	
-	public void doQuestion() {
+	public void doQuestion(String input) {
+		if (input.contains("eating")||input.contains("eat")||input.contains("drink")||input.contains("rocks")) 
+//		case "eating": case "eat": case "drinking": case "drink": case "bubble": case "rocks": case "rock": case "bones": case "bone":
+			System.out.println("Yes I do.");
+		else
+			System.out.println("No I do not."); 
 		
+		return;
 	}
 		
 	/**
