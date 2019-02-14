@@ -55,7 +55,7 @@ public class me extends chatBot implements TopicQuestions {
 	@Override
 	public void whoQuestion(String input) {
 		// TODO Auto-generated method stub
-		if (input.contains("you")) {
+		if (input.contains("who are you")) {
 			int i;
 			int a = (int)Math.random() * 4;
 			if (a == 0)
@@ -67,7 +67,7 @@ public class me extends chatBot implements TopicQuestions {
 			else
 				i = 3;
 			System.out.println(who[i]);// 0,1,2,3
-		} else if (input.contains("i")) {
+		} else if (input.contains("who am i")) {
 			int i;
 			int a = (int)Math.random() * 3;
 			if (a == 0 )
