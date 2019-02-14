@@ -27,32 +27,39 @@ public class IrrelavantTopic {
 	
 	public boolean checkRelavancy(String input) throws NoSuchMethodException, SecurityException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
 		hasQuestion = false;
+		wHquestion = null;
 		if(input.contains("quit") || input.contains("leave") || input.contains("stop")) {
 			System.out.println("Thank you so much for talking to me! Have a good day!");
 			return false;
 		}
 		//check for keyword
+		if(input.contains("what do"))
+			hasQuestion = true;
 		String[] textInput = input.split(" ");
-		
+		System.out.println(hasQuestion);
 		//
 		for(int i = 0; i < textInput.length; i++) {
 			keyword = textInput[i];
-			switch (keyword) {
-				case "who": case "what": case "where": case "when": case "how":
-				hasQuestion = true; wHquestion=keyword; break;
-				case "do":
-				doQuestion(input); return true;
-				default: break;
-			}
-			for(int j = 0; j < topics.size(); j++) {
-				if (topics.get(j).contains(keyword)) {
-					// If the String array contains any keyword; run class method
-					String cls = "bot."+topics.get(j).get(0);
-					Class tpic = Class.forName(cls);
-					Method methodRunner = tpic.getMethod("runTopic", String.class);
-					
-					methodRunner.invoke(tpic.getConstructor().newInstance(), input);
-					return true;
+			System.out.println(hasQuestion);
+			if(hasQuestion==false) {
+				switch (keyword) {
+					case "who": case "what": case "where": case "when": case "how":
+					hasQuestion = true; wHquestion=keyword; break;
+					case "do":
+					doQuestion(input); return true;
+					default: break;
+				}
+				if(hasQuestion==true) {
+				for(int j = 0; j < topics.size(); j++) {
+					if (topics.get(j).contains(keyword)) {
+						// If the String array contains any keyword; run class method
+						String cls = "bot."+topics.get(j).get(0);
+						Class tpic = Class.forName(cls);
+						Method methodRunner = tpic.getMethod("runTopic", String.class);
+						methodRunner.invoke(tpic.getConstructor().newInstance(), input);
+						return true;
+					}
+				}
 				}
 			}
 		}
