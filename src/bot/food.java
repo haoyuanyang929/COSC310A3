@@ -11,62 +11,74 @@ public class food implements TopicQuestions {
 	}
 
 	
-
-	@Override
-	public void whoQuestion() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void whatQuestion() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void whereQuestion() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void whenQuestion() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void whyQuestion() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void howQuestion() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	@Override
 	public void runTopic(String input) {
 		// TODO Auto-generated method stub
 		switch (input) {
 		case "what": 
-			whatQuestion();
+			whatQuestion(input);
 			break;
 		case "where":
-			whereQuestion();
+			whereQuestion(input);
 			break;
 		case "when":
-			whenQuestion();
+			whenQuestion(input);
 			break;
 		case "why":
-			whyQuestion();
+			whyQuestion(input);
 			break;
 		case "how":
-			howQuestion();
+			howQuestion(input);
 			break;	
 		}
+	}
+
+
+
+	@Override
+	public void whoQuestion(String input) {
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void whatQuestion(String input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void whereQuestion(String input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void whenQuestion(String input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void whyQuestion(String input) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void howQuestion(String input) {
+		// TODO Auto-generated method stub
+		
 	}
 }

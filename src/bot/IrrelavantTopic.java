@@ -1,9 +1,10 @@
+
 package bot;
 
 import java.lang.reflect.*;
 import java.util.*;
 
-public class IrrelavantTopic extends chatBot{
+public class IrrelavantTopic {
 	Object obj;
 	String keyword, wHquestion;
 	boolean topicExists, hasQuestion;
@@ -12,15 +13,15 @@ public class IrrelavantTopic extends chatBot{
 	ArrayList<ArrayList<String>> topics = new ArrayList<ArrayList<String>>();
 	ArrayList<String> foodRelated = new ArrayList<String>(){{add("food");add("eat");add("drink");add("tea");}};
 	ArrayList<String> hobbies = new ArrayList<String>(){{add("lotr");add("reading");add("like");add("books");add("hobbies");}};
-	ArrayList<String> me = new ArrayList<String>(){{add("me");add("you");add("name");add("dinosaur");}};
-	ArrayList<String> collection = new ArrayList<String>(){{add("collection");add("rock");add("enjoy");add("dinosaur");}};
+	ArrayList<String> collection = new ArrayList<String>(){{add("collection");add("collect");add("rock");add("rocks");add("bone");add("bones");add("plants");add("plant");add("gem");add("gems");add("dangerous");}};
+	ArrayList<String> me = new ArrayList<String>(){{add("me");add("name");add("dinosaur");add("date");add("tall");add("age");add("day");add("old");add("die");add("excellent");add("good");}};
 	
 	
 	IrrelavantTopic(){
 		topics.add(foodRelated);
 		topics.add(hobbies);
-		topics.add(collection);
 		topics.add(me);
+		topics.add(collection);
 	}
 	
 	public boolean checkRelavancy(String input) throws NoSuchMethodException, SecurityException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
