@@ -1,3 +1,4 @@
+
 package bot;
 
 import java.lang.reflect.*;
@@ -107,3 +108,4 @@ public class IrrelavantTopic {
 	}
 	***/
 }
+
