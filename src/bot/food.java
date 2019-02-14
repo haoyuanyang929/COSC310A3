@@ -1,6 +1,5 @@
 package bot;
 
-import java.text.DateFormatSymbols;
 import java.util.Scanner;
 
 public class food implements TopicQuestions {
