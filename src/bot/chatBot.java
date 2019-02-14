@@ -13,7 +13,6 @@ public class chatBot {
 		irrTopic = new IrrelavantTopic();
 		//Loadingscrean.main(args); 
 
-		
 		System.out.println("ROAr roar roooar roar rrrroooaaaarrr RoaaaaaaaaaaaaaaaAAArrArArAr");
 		System.out.println("Welcome to the Dino-Bot, Please Enter the name you would like to be called by.");
 		Scanner mainscan = new Scanner(System.in);
@@ -62,7 +61,6 @@ public class chatBot {
 	}
 	
 	public static boolean conversation(String userIn) {
-		System.out.println(userIn);
 		checktopic(userIn); // - keep checktopic for roar contest
 
 		try {

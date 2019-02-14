@@ -31,23 +31,28 @@ public class IrrelavantTopic {
 		}
 		//check for keyword
 		String[] textInput = input.split(" ");
-				
+		
+		//
 		for(int i = 0; i < textInput.length; i++) {
 			keyword = textInput[i];
 			switch (keyword) {
 				case "who": case "what": case "where": case "when": case "how":
 				hasQuestion = true; wHquestion=keyword; break;
+				case "do":
+				doQuestion(); break;
 				default: break;
 			}
-			for(int j = 0; j < topics.size(); j++) {
-				if (topics.get(j).contains(keyword)) {
-					// If the String array contains any keyword; run class method
-					String cls = "bot."+topics.get(j).get(0);
-					Class tpic = Class.forName(cls);
-					Method methodRunner = tpic.getMethod("runTopic", String.class);
-					
-					methodRunner.invoke(tpic.getConstructor().newInstance(), input);
-					return true;
+			if(hasQuestion==true||input.contains("?")) {
+				for(int j = 0; j < topics.size(); j++) {
+					if (topics.get(j).contains(keyword)) {
+						// If the String array contains any keyword; run class method
+						String cls = "bot."+topics.get(j).get(0);
+						Class tpic = Class.forName(cls);
+						Method methodRunner = tpic.getMethod("runTopic", String.class);
+						
+						methodRunner.invoke(tpic.getConstructor().newInstance(), input);
+						return true;
+					}
 				}
 			}
 		}
@@ -60,6 +65,10 @@ public class IrrelavantTopic {
 	
 	public String getwHquestion() {
 			return wHquestion;
+		
+	}
+	
+	public void doQuestion() {
 		
 	}
 		
