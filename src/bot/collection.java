@@ -152,14 +152,6 @@ static int mathtest;
 				System.out.println("Yes sometimes other dinosaurs think I am stealing their food");
 			}
 		}
-		else if(userinput.contains("quit") || userinput.contains("stop") || userinput.contains("leave")) {
-			System.out.println("Okay we can talk about something else");
-			chatBot.inputfield();
-		}
-		else { //when you say something thats not precoded.
-			System.out.println("I am sorry, I don't understand that.");
-		}
-		maininput.close();
 		return;
 	}
 	
