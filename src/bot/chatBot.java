@@ -28,6 +28,8 @@ public class chatBot {
 	}
 	
 	public static void inputfield(){ //input method. Subject to change like crazy
+		Scanner inscan = new Scanner(System.in);
+		String startoption;
 		
 		System.out.println("..........."); //spacer
 		System.out.println("Curious to know what I can talk about? Have a list"); //prints list of topics
@@ -49,7 +51,8 @@ public class chatBot {
 		//checking what they are talking about.
 		boolean continueConv;
 		do {
-		continueConv = conversation();
+			startoption = (inscan.nextLine()).toLowerCase(); //scanning an input
+			continueConv = conversation(startoption);
 		}while(continueConv!=false);
 		if (continueConv == false) {
 			System.exit(0);
@@ -58,13 +61,12 @@ public class chatBot {
 		
 	}
 	
-	public static boolean conversation() {
-		Scanner inscan = new Scanner(System.in);
-		String startoption;
-		startoption = (inscan.nextLine()).toLowerCase(); //scanning an input
-		checktopic(startoption); // - keep checktopic for roar contest
+	public static boolean conversation(String userIn) {
+		System.out.println(userIn);
+		checktopic(userIn); // - keep checktopic for roar contest
+
 		try {
-			return irrTopic.checkRelavancy(startoption);
+			return irrTopic.checkRelavancy(userIn);
 			
 		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | ClassNotFoundException | InstantiationException e) {
 			// TODO Auto-generated catch block
