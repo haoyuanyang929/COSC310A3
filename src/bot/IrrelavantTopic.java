@@ -25,10 +25,10 @@ public class IrrelavantTopic {
 	}
 	
 	public boolean checkRelavancy(String input) throws NoSuchMethodException, SecurityException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
-		if (input.split("?")[1]==null) {
-			System.out.println("null");
-		}else {
-			input = input.split("?")[0];
+		int qMark = input.indexOf("?");
+		if(qMark>=0) {
+			String key=input.substring(0,qMark);
+			input = key;
 		}
 		hasQuestion = false;
 		wHquestion = null;

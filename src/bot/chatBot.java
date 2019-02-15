@@ -11,7 +11,7 @@ public class chatBot {
 		//added a cute little printing thing. lemme know thoughts. keep it until we get GUI
 
 		irrTopic = new IrrelavantTopic();
-		//Loadingscrean.main(args); 
+	//	Loadingscrean.main(args); 
 
 		System.out.println("ROAr roar roooar roar rrrroooaaaarrr RoaaaaaaaaaaaaaaaAAArrArArAr");
 		System.out.println("Welcome to the Dino-Bot, Please Enter the name you would like to be called by.");
@@ -31,17 +31,20 @@ public class chatBot {
 		String startoption;
 		
 		System.out.println("..........."); //spacer
-		System.out.println("Curious to know what I can talk about? Have a list"); //prints list of topics
-		System.out.println(thinking());	 
-		System.out.println(thinking());
-		System.out.println(thinking());  
+//		System.out.println("Curious to know what I can talk about? Have a list"); //prints list of topics
+//		System.out.println(thinking());	  //************************************************
+//		System.out.println(thinking());   //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
+//		System.out.println(thinking());   //************************************************
 		System.out.println("..........."); //spacer
 		System.out.println("We can test how well your roar is!");
 		System.out.println("Or we can talk about food");
-		System.out.println("We can discuss my collection!");
-		System.out.println("Lord of the rings happens to be something that interests me");
+		System.out.println("I know a decent amount about INSERT TOPIC 1");
+		System.out.println("We can discuss collection!");
+		System.out.println("How about talking about INSERT TOPIC 3");
+		System.out.println("INSERT TOPIC 4 happens to be something that interests me");
+		System.out.println("Or maybe you want to talk about INSERT TOPIC 5");
 		System.out.println("Or if you want to get to know me thats fine too!");
-		System.out.println(thinking());
+	//	System.out.println(thinking());
 		
 		
 		//checking what they are talking about.
@@ -73,6 +76,7 @@ public class chatBot {
 	
 	public static String thinking(){ //prints a line of dots after 1.5 seconds to mimic thinking animation
 		long curtime = System.currentTimeMillis();
+		
 		long waittime1 = curtime + 150;
 		while (curtime != waittime1){				
 			 curtime = System.currentTimeMillis();  
@@ -115,7 +119,6 @@ public class chatBot {
 			thinking();
 			System.exit(0); //closing the program forcibly
 		}
-		
 	}
 	
 }
