@@ -19,16 +19,16 @@ public class me extends chatBot implements TopicQuestions {
 			"I am a ancient giant chicken.", "You are my lunch.", "You are a human and also my lunch.",
 			"You are " /* user name */ };
 	String[] what = { "I am a dinosaur.", "I am Tee-Tee.", "I am a T-rex. You can call me Tee-Tee.",
-			"I am a ancient giant chicken.", "I can eat, eat, and… Talk to you.", "I like food and other things.",
-			"It's "/* today date */, "It's " /* today's day */, "You are " /* user name */, "I like stone.", "I like gem.", "I like rock.", "I like bones", "I like bubble tea", "I like milk tea", "I love Lord of the Ring"};
+			"I am a ancient giant chicken.", "I can eat, eat, and Talk to you.", "I like food and other things.",
+			"It's 100,000,000,000 years before ", "It's " /* today's day */, "You are " /* user name */, "I like stone.", "I like gem.", "I like rock.", "I like bones", "I like bubble tea", "I like milk tea", "I love Lord of the Ring"};
 	String[] when = { "During luchtime", "During dinner time.", "Perhaps during breakfast time.", "Two days ago.",
-			"It's Triassic Period.", "It's "/* today date */, "250 million years later." };
+			"It's Triassic Period.", "It's 100,000,000,000 years before ", "250 million years later." };
 	String[] where = { "You are at my place.", "You are in my stomach.", "You are in the middle of a big continent." };
 	String[] how = { "I am starving", "I am good.", "How rude! I am 35 years old", "My age is a secret.",
 			"I am 40 ft tall.", "I am 12.3 meters tall.", "He died from a fireball from the sky." };
 	String[] why = { "I have no idea.", "Because I am hungry.", "Because you look delicious and juicy.",
 			"Because I am adorable.", "Because I am a hardworking, and talented T-rex.", "Because you are here.",
-			"Because… Because… Because…. What did you ask me again?", "Because I am a dinosaur." };
+			"Because... Because... Because... What did you ask me again?", "Because I am a dinosaur." };
 
 	@Override
 	public void runTopic(String input) {				 
@@ -79,13 +79,14 @@ public class me extends chatBot implements TopicQuestions {
 			else  i = 15;
 			System.out.println(what[i]); //Possible position:5,9,10,11,12,13,14,15  //print
 		} else if (input.contains("date")) { // print out the date of today 
-			SimpleDateFormat dayFormat = new SimpleDateFormat("MM, DD yyyy");
+			SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy");
 			Date date = new Date();
-			System.out.println(what[6] + dayFormat.format(date));
+			System.out.println(what[6] + dayFormat.format(date) + ".");
 		} else if (input.contains("day")) { // print out the day of the week of today 
 			// week day code
-			DateFormatSymbols dfs = new DateFormatSymbols();
-			System.out.println(what[7] + dfs.getWeekdays());
+			SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE");
+			Date date = new Date();
+			System.out.println(what[7] + dayFormat.format(date)+".");
 		} else if (input.contains("name") && input.contains("my")) {  // print out user's name 
 			System.out.println(what[8] + name);
 
@@ -168,9 +169,9 @@ public class me extends chatBot implements TopicQuestions {
 		} else if (input.contains("did") || input.contains("was") || input.contains("were")) { // ask about past 
 			System.out.println(when[3]);
 		} else if (input.contains("are") || input.contains("is") || input.contains("does")) { // ask about present 
-			SimpleDateFormat dayFormat = new SimpleDateFormat("MM, DD yyyy");
+			SimpleDateFormat dayFormat = new SimpleDateFormat("MMM, dd yyyy");
 			Date date = new Date();			// print out today's date 
-			System.out.println(when[5] + dayFormat.format(date));
+			System.out.println(when[5] + dayFormat.format(date) + ".");
 		} else if (input.contains("will") || input.contains("2019")) { // ask about future 
 			System.out.println(when[7]);
 		} else { 		//exception
