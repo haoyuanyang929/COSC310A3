@@ -32,17 +32,14 @@ public class chatBot {
 		
 		System.out.println("..........."); //spacer
 		System.out.println("Curious to know what I can talk about? Have a list"); //prints list of topics
-//		System.out.println(thinking());	  //************************************************
-//		System.out.println(thinking());   //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
-//		System.out.println(thinking());   //************************************************
+		System.out.println(thinking());	 
+		System.out.println(thinking());
+		System.out.println(thinking());  
 		System.out.println("..........."); //spacer
 		System.out.println("We can test how well your roar is!");
 		System.out.println("Or we can talk about food");
-		System.out.println("I know a decent amount about INSERT TOPIC 1");
-		System.out.println("We can discuss collection!");
-		System.out.println("How about talking about INSERT TOPIC 3");
-		System.out.println("INSERT TOPIC 4 happens to be something that interests me");
-		System.out.println("Or maybe you want to talk about INSERT TOPIC 5");
+		System.out.println("We can discuss my collection!");
+		System.out.println("Lord of the rings happens to be something that interests me");
 		System.out.println("Or if you want to get to know me thats fine too!");
 		System.out.println(thinking());
 		
