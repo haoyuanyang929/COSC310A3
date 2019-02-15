@@ -23,8 +23,8 @@ static int shmeegultest;
 				System.out.println("Because everyone is so tough");
 		}
 		//ask how he started lotr
-		else if(usershmeegul.contains("How")) {
-			shmeegultest = (int)(Math.random()*5);
+		else if(usershmeegul.contains("how")) {
+			shmeegultest = 2;
 			if(shmeegultest == 0)
 				System.out.println("I found the audio books in a pterodactyl nest");
 			else if(shmeegultest == 1)
