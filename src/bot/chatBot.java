@@ -78,9 +78,9 @@ public class chatBot {
 		long curtime = System.currentTimeMillis();
 		
 		long waittime1 = curtime + 150;
-		while (curtime != waittime1){				//************************************************
-			 curtime = System.currentTimeMillis();  //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
-		}                                           //************************************************
+		while (curtime != waittime1){				
+			 curtime = System.currentTimeMillis();  
+		}                                           
 		 return "............";
 
 	}
