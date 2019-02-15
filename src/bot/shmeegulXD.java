@@ -192,7 +192,10 @@ static int shmeegultest;
 		case "shmeegul":
 			System.out.println("Your favorite character is " + fav + " ? REEEEEEEEEEEEEEEE!");
 			break;
+		default:
+			System.out.println("I don't think I know who that is.");
 		}
+		return;
 	}
 
 

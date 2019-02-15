@@ -108,15 +108,6 @@ public class chatBot {
 				inputfield();
 			}
 		}
-		//no need for this after fixing irrTopic
-		/***
-		else {
-			System.out.println("Sorry! My dino-speech is better than my english, did you want to talk about " + top + " ?"); //maybe you didn't mean to go here
-		}
-		
-		topche.close();
-		return false; //default case is to return false.
-		***/
 	}
 	
 }
