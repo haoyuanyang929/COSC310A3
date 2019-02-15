@@ -2,9 +2,13 @@ package bot;
 
 import java.util.Scanner;
 
-public class food implements TopicQuestions {
+public class food extends chatBot implements TopicQuestions {
 	
 	IrrelavantTopic irrTopic;
+	
+	public food(){
+		 irrTopic = chatBot.irrTopic;
+		}
 	
 	Scanner in = new Scanner(System.in);
 	
@@ -41,10 +45,6 @@ public class food implements TopicQuestions {
 		
 	}
 	
-	public food(){
-	 irrTopic = chatBot.irrTopic;
-	}
-
 
 
 	@Override
