@@ -18,16 +18,16 @@ public class me extends chatBot implements TopicQuestions {
 			"I am a ancient giant chicken.", "You are my lunch.", "You are a human and also my lunch.",
 			"You are " /* user name */ };
 	String[] what = { "I am a dinosaur.", "I am Tee-Tee.", "I am a T-rex. You can call me Tee-Tee.",
-			"I am a ancient giant chicken.", "I can eat, eat, and… Talk to you.", "I like food and other things.",
-			"It's "/* today date */, "It's " /* today's day */, "You are " /* user name */ };
+			"I am a ancient giant chicken.", "I can eat, eat, andâ€¦ Talk to you.", "I like food and other things.",
+			"It's "/* today date */, "It's " /* today's day */, "You are " /* user name */, "I like stone.", "I like gem.", "I like rock.", "I like bones", "I like bubble tea", "I like milk tea", "I love Lord of the Ring"};
 	String[] when = { "During luchtime", "During dinner time.", "Perhaps during breakfast time.", "Two days ago.",
-			"It’s Triassic Period.", "It's "/* today date */, "250 million years later." };
+			"Itâ€™s Triassic Period.", "It's "/* today date */, "250 million years later." };
 	String[] where = { "You are at my place.", "You are in my stomach.", "You are in the middle of a big continent." };
 	String[] how = { "I am starving", "I am good.", "How rude! I am 35 years old", "My age is a secret.",
 			"I am 40 ft tall.", "I am 12.3 meters tall.", "He died from a fireball from the sky." };
 	String[] why = { "I have no idea.", "Because I am hungry.", "Because you look delicious and juicy.",
 			"Because I am adorable.", "Because I am a hardworking, and talented T-rex.", "Because you are here.",
-			"Because… Because… Because…. What did you ask me again?", "Because I am a dinosaur." };
+			"Becauseâ€¦ Becauseâ€¦ Becauseâ€¦. What did you ask me again?", "Because I am a dinosaur." };
 
 	@Override
 	public void runTopic(String input) {
@@ -70,9 +70,12 @@ public class me extends chatBot implements TopicQuestions {
 		} else if (input.contains("who am i")) {
 			int i;
 			double a = Math.random() * 10;
-			if (a <= 3 ) i = 4;
-			else if (a > 3 && a <= 6)i = 5;
-			else i = 6;
+			if (a <= 3)
+				i = 4;
+			else if (a > 3 && a <= 6)
+				i = 5;
+			else
+				i = 6;
 			System.out.println(when[i]);// 4,5,6
 		} else {
 			System.out.println("My knowledge is limited. Can you reword it?");
@@ -85,7 +88,17 @@ public class me extends chatBot implements TopicQuestions {
 		if (input.contains("can") || input.contains("capable")) {
 			System.out.println(what[4]);
 		} else if (input.contains("like")) {
-			System.out.println(what[5]);
+			int i; 
+			int a = (int)(Math.random()*((8-1)+1))+1;
+			if ( a == 1) i = 5;
+			else if ( a == 2 ) i = 9;
+			else if ( a == 3 ) i = 10;
+			else if ( a == 4 ) i = 11;
+			else if ( a == 5 ) i = 12;
+			else if ( a == 6 ) i = 13;
+			else if ( a == 7 ) i = 14;
+			else  i = 15;
+			System.out.println(what[i]); //5,9,10,11,12,13,14,15
 		} else if (input.contains("date")) {
 			SimpleDateFormat dayFormat = new SimpleDateFormat("MM, DD yyyy");
 			Date date = new Date();
@@ -94,8 +107,9 @@ public class me extends chatBot implements TopicQuestions {
 			// week day code
 			DateFormatSymbols dfs = new DateFormatSymbols();
 			System.out.println(what[7] + dfs.getWeekdays());
-		} else if (input.contains("name") && input.contains("my")){
+		} else if (input.contains("name") && input.contains("my")) {
 			System.out.println(what[8] + name);
+
 		} else if ((input.contains("you") || input.contains("your"))&& input.contains("name")) {
 			System.out.println(what[1]);
 		}else if (input.contains("you")) {
@@ -104,6 +118,7 @@ public class me extends chatBot implements TopicQuestions {
 			if (a <= 3 ) i = 0;
 			else if (a > 3 && a <= 6)i = 2;
 			else i = 3;
+
 			System.out.println(when[i]);// 0,2,3
 		} else {
 			System.out.println("My knowledge is limited. Can you reword it?");
@@ -117,20 +132,25 @@ public class me extends chatBot implements TopicQuestions {
 //		where = { 0 "You are at my place.", 
 //					1 "You are in my stomach.", 
 //					2 "You are in the middle of a big continent." };
-		if ( input.contains("i")) {
+		if (input.contains("i")) {
 			int i;
 			double a = Math.random() * 10;
-			if (a <= 3 ) i = 0;
-			else if (a > 3 && a <= 6)i = 1;
-			else i = 2;
+			if (a <= 3)
+				i = 0;
+			else if (a > 3 && a <= 6)
+				i = 1;
+			else
+				i = 2;
 			System.out.println(where[i]);// 0,1,2
-		}else if (input.contains("we")){
+		} else if (input.contains("we")) {
 			int i;
 			double a = Math.random() * 10;
-			if (a >= 5) i = 0;
-			else i = 2;
+			if (a >= 5)
+				i = 0;
+			else
+				i = 2;
 			System.out.println(where[i]);// 0,2
-		}else {
+		} else {
 			System.out.println("My knowledge is limited. Can you reword it?");
 		}
 
@@ -142,25 +162,28 @@ public class me extends chatBot implements TopicQuestions {
 		// 0"During luchtime",
 		// 1"Durig dinner time.",
 		// 2"Perhaps during breakfest time.",
-		// 3"Two days ago.", 
-		// 4"It’s Triassic Period.",
+		// 3"Two days ago.",
+		// 4"Itâ€™s Triassic Period.",
 		// 5"It's "/*today date*/,
 		//
 		// 6"250 million years later." */
 		if (input.contains("eat") || input.contains("food") || input.contains("meal")) {
 			int i;
 			double a = Math.random() * 10;
-			if (a <= 3 ) i = 0;
-			else if (a > 3 && a <= 6)i = 1;
-			else i = 2;
+			if (a <= 3)
+				i = 0;
+			else if (a > 3 && a <= 6)
+				i = 1;
+			else
+				i = 2;
 			System.out.println(when[i]);// 0,1,2
 		} else if (input.contains("did") || input.contains("was") || input.contains("were")) {
 			System.out.println(when[3]);
-		} else if (input.contains("are") || input.contains("is") || input.contains("does")|| input.contains("date")) {
+		} else if (input.contains("are") || input.contains("is") || input.contains("does") || input.contains("date")) {
 			SimpleDateFormat dayFormat = new SimpleDateFormat("MM, DD yyyy");
 			Date date = new Date();
 			System.out.println(when[5] + dayFormat.format(date));
-		} else if ( input.contains("will") || input.contains("2019")) {
+		} else if (input.contains("will") || input.contains("2019")) {
 			System.out.println(when[7]);
 		} else {
 			System.out.println("My knowledge is limited. Can you reword it?");
@@ -172,7 +195,7 @@ public class me extends chatBot implements TopicQuestions {
 		// TODO Auto-generated method stub
 		if (input.contains("eat") || input.contains("food")) {
 			int i;
-			double a =  Math.random() * 100;
+			double a = Math.random() * 100;
 			if (a <= 25)
 				i = 1;
 			else if (a > 25 && a <= 50)
@@ -182,21 +205,25 @@ public class me extends chatBot implements TopicQuestions {
 			else
 				i = 7;
 			System.out.println(why[i]);// 1,2,5,7
-			
-		}else if(input.contains("good") || input.contains("excellent")) {
+
+		} else if (input.contains("good") || input.contains("excellent")) {
 			int i;
-			double  a = Math.random() * 10;
-			if (a >= 5) i = 3;
-			else i = 4;
+			double a = Math.random() * 10;
+			if (a >= 5)
+				i = 3;
+			else
+				i = 4;
 			System.out.println(why[i]);// 3,4
-		}else {
+		} else {
 			int i;
-			double  a = Math.random() * 10;
-			if (a >= 5) i = 0;
-			else i = 7;
+			double a = Math.random() * 10;
+			if (a >= 5)
+				i = 0;
+			else
+				i = 7;
 			System.out.println(why[i]);// 0,7
 		}
-		
+
 	}
 
 	@Override
@@ -209,31 +236,38 @@ public class me extends chatBot implements TopicQuestions {
 //				4"I am 40 ft tall.", 
 //				5"I am 12.3 meters tall.", 
 //				6"He died from a fireball from the sky." };
-		
-		if ( input.contains("age") || input.contains("old")) {
+
+		if (input.contains("age") || input.contains("old")) {
 			int i;
-			int a = (int)Math.random() * 2;
-			if (a == 0) i = 2;
-			else i = 3;
+			int a = (int) Math.random() * 2;
+			if (a == 0)
+				i = 2;
+			else
+				i = 3;
 			System.out.println(how[i]);// 2,3
-		} else if ( input.contains("tall") || input.contains("long") || input.contains("big") || input.contains("size")) {
+		} else if (input.contains("tall") || input.contains("long") || input.contains("big")
+				|| input.contains("size")) {
 			int i;
-			double  a = Math.random() * 10;
-			if (a >= 5) i = 4;
-			else i = 5;
+			double a = Math.random() * 10;
+			if (a >= 5)
+				i = 4;
+			else
+				i = 5;
 			System.out.println(how[i]);// 4,5
-		} else if ( input.contains("die") || input.contains("dead") || input.contains("died")) {
+		} else if (input.contains("die") || input.contains("dead") || input.contains("died")) {
 			System.out.println(how[6]);
 		} else if (input.contains("you") && (input.contains("are") || input.contains("do"))) {
 			int i;
-			double a = Math.random() * 100 ;
-			if (a >= 50) i = 0;
-			else i = 1;
+			double a = Math.random() * 100;
+			if (a >= 50)
+				i = 0;
+			else
+				i = 1;
 			System.out.println(how[i]);// 0,1
 		} else {
 			System.out.println("My knowledge is limited. Can you reword it?");
 		}
-		 
+
 	}
 
 }
