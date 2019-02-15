@@ -26,6 +26,11 @@ public class IrrelavantTopic {
 	}
 	
 	public boolean checkRelavancy(String input) throws NoSuchMethodException, SecurityException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
+		int qMark = input.indexOf("?");
+		if(qMark>=0) {
+			String key=input.substring(0,qMark);
+			input = key;
+		}
 		hasQuestion = false;
 		wHquestion = null;
 		if(input.contains("quit") || input.contains("leave") || input.contains("stop")) {
