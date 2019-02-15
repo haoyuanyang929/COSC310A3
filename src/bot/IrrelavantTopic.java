@@ -12,7 +12,8 @@ public class IrrelavantTopic {
 
 	ArrayList<ArrayList<String>> topics = new ArrayList<ArrayList<String>>();
 	ArrayList<String> foodRelated = new ArrayList<String>(){{add("food");add("eat");add("drink");add("tea");}};
-	ArrayList<String> me = new ArrayList<String>(){{add("me");add("i");add("we");add("name");add("dinosaur");add("date");add("tall");add("like");add("age");add("day");add("old");add("die");add("excellent");add("good");add("tall");add("long");add("size");add("big");}};
+
+	ArrayList<String> me = new ArrayList<String>(){{add("me");add("i");add("we");add("name");add("like");add("date");add("age");add("day");add("old");add("die");add("excellent");add("good");add("tall");add("long");add("size");add("big");add("can");add("capable");}};
 	ArrayList<String> hobbies = new ArrayList<String>(){{add("shmeegulXD");add("reading");add("books");add("hobbies");add("shmeegul");add("hobbits");add("wizards");add("lotr");add("lord");add("movies");;}};
 	ArrayList<String> collection = new ArrayList<String>(){{add("collection");add("rock");add("rocks");add("bone");add("bones");add("gem");add("gems");add("plant");add("plants");add("collect");add("dangerous");}};
 	
