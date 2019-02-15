@@ -108,6 +108,16 @@ public class chatBot {
 				inputfield();
 			}
 		}
+		else if(top.contains("fuck") || top.contains("bitch") || top.contains("shit") || top.contains("ass") || top.contains("fucking") || top.contains("motherfucker") || top.contains("damn")){
+			System.out.println("Please do not swear at me!");
+			thinking();
+			thinking(); //just giving spacing
+			System.out.println("If you are going to be rude this conversation is over!");
+			thinking();
+			thinking();//more spacing
+			thinking();
+			System.exit(0); //closing the program forcibly
+		}
 		//no need for this after fixing irrTopic
 		/***
 		else {
