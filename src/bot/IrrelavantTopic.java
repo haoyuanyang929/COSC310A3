@@ -35,14 +35,14 @@ public class IrrelavantTopic {
 			return false;
 		}
 		//check for keyword
-		if(input.contains("what do"))
+		if(input.contains("what do")) {
 			hasQuestion = true;
+			wHquestion = "what";
+		}
 		String[] textInput = input.split(" ");
-		System.out.println(hasQuestion);
 		//
 		for(int i = 0; i < textInput.length; i++) {
 			keyword = textInput[i];
-			System.out.println(hasQuestion);
 			if(hasQuestion==false) {
 				switch (keyword) {
 					case "who": case "what": case "where": case "when": case "how":
@@ -51,8 +51,8 @@ public class IrrelavantTopic {
 					doQuestion(input); return true;
 					default: break;
 				}
-				if(hasQuestion==true) {
-				for(int j = 0; j < topics.size(); j++) {
+				}
+			for(int j = 0; j < topics.size(); j++) {
 					if (topics.get(j).contains(keyword)) {
 						// If the String array contains any keyword; run class method
 						String cls = "bot."+topics.get(j).get(0);
@@ -62,8 +62,7 @@ public class IrrelavantTopic {
 						return true;
 					}
 				}
-				}
-			}
+			
 		}
 		System.out.println("Sorry, I don't understand that.");	
 		return true;
