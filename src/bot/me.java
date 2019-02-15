@@ -18,16 +18,16 @@ public class me extends chatBot implements TopicQuestions {
 			"I am a ancient giant chicken.", "You are my lunch.", "You are a human and also my lunch.",
 			"You are " /* user name */ };
 	String[] what = { "I am a dinosaur.", "I am Tee-Tee.", "I am a T-rex. You can call me Tee-Tee.",
-			"I am a ancient giant chicken.", "I can eat, eat, and… Talk to you.", "I like food and other things.",
+			"I am a ancient giant chicken.", "I can eat, eat, andâ€¦ Talk to you.", "I like food and other things.",
 			"It's "/* today date */, "It's " /* today's day */, "You are " /* user name */, "I like stone.", "I like gem.", "I like rock.", "I like bones", "I like bubble tea", "I like milk tea", "I love Lord of the Ring"};
 	String[] when = { "During luchtime", "During dinner time.", "Perhaps during breakfast time.", "Two days ago.",
-			"It’s Triassic Period.", "It's "/* today date */, "250 million years later." };
+			"Itâ€™s Triassic Period.", "It's "/* today date */, "250 million years later." };
 	String[] where = { "You are at my place.", "You are in my stomach.", "You are in the middle of a big continent." };
 	String[] how = { "I am starving", "I am good.", "How rude! I am 35 years old", "My age is a secret.",
 			"I am 40 ft tall.", "I am 12.3 meters tall.", "He died from a fireball from the sky." };
 	String[] why = { "I have no idea.", "Because I am hungry.", "Because you look delicious and juicy.",
 			"Because I am adorable.", "Because I am a hardworking, and talented T-rex.", "Because you are here.",
-			"Because… Because… Because…. What did you ask me again?", "Because I am a dinosaur." };
+			"Becauseâ€¦ Becauseâ€¦ Becauseâ€¦. What did you ask me again?", "Because I am a dinosaur." };
 
 	@Override
 	public void runTopic(String input) {
@@ -85,23 +85,6 @@ public class me extends chatBot implements TopicQuestions {
 
 	@Override
 	public void whatQuestion(String input) {
-//0		"I am a dinosaur.", 
-//1		"I am Tee-Tee.", 
-//2		"I am a T-rex. You can call me Tee-Tee.",
-//3		"I am a ancient giant chicken.", 
-//4		"I can eat, eat, and… Talk to you.", 
-//5		"I like food and other things.",
-//6		"It's "/* today date */, 
-//7		"It's " /* today's day */, 
-//8		"You are " /* user name */, 
-//9		"I like stone.", 
-//10	"I like gem.", 
-//11	"I like rock.", 
-//12	"I like bones", 
-//13	"I like bubble tea", 
-//14	"I like milk tea", 
-//15	"I love Lord of the Ring"
-		
 		if (input.contains("can") || input.contains("capable")) {
 			System.out.println(what[4]);
 		} else if (input.contains("like")) {
@@ -126,17 +109,16 @@ public class me extends chatBot implements TopicQuestions {
 			System.out.println(what[7] + dfs.getWeekdays());
 		} else if (input.contains("name") && input.contains("my")) {
 			System.out.println(what[8] + name);
-		} else if ((input.contains("you") || input.contains("your")) && input.contains("name")) {
+
+		} else if ((input.contains("you") || input.contains("your"))&& input.contains("name")) {
 			System.out.println(what[1]);
-		} else if (input.contains("you")) {
+		}else if (input.contains("you")) {
 			int i;
 			double a = Math.random() * 10;
-			if (a <= 3)
-				i = 0;
-			else if (a > 3 && a <= 6)
-				i = 2;
-			else
-				i = 3;
+			if (a <= 3 ) i = 0;
+			else if (a > 3 && a <= 6)i = 2;
+			else i = 3;
+
 			System.out.println(when[i]);// 0,2,3
 		} else {
 			System.out.println("My knowledge is limited. Can you reword it?");
@@ -181,7 +163,7 @@ public class me extends chatBot implements TopicQuestions {
 		// 1"Durig dinner time.",
 		// 2"Perhaps during breakfest time.",
 		// 3"Two days ago.",
-		// 4"It’s Triassic Period.",
+		// 4"Itâ€™s Triassic Period.",
 		// 5"It's "/*today date*/,
 		//
 		// 6"250 million years later." */
