@@ -154,7 +154,6 @@ public class me extends chatBot implements TopicQuestions {
 		// 3"Two days ago.",
 		// 4"It’s Triassic Period.",
 		// 5"It's "/*today date*/,
-		//
 		// 6"250 million years later." */
 		if (input.contains("eat") && input.contains("me")) {		// tell the user when will he or she going to be eaten by Tee-Tee
 			int i;
