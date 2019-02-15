@@ -19,7 +19,7 @@ public class me extends chatBot implements TopicQuestions {
 			"You are " /* user name */ };
 	String[] what = { "I am a dinosaur.", "I am Tee-Tee.", "I am a T-rex. You can call me Tee-Tee.",
 			"I am a ancient giant chicken.", "I can eat, eat, and… Talk to you.", "I like food and other things.",
-			"It's "/* today date */, "It's " /* today's day */, "You are " /* user name */, "I like stone.", "I like gem.", "I like rock.", "I like bones", "I like bubble tea", "I like milk tea", "I love Lord of the Ring"};
+			"It's "/* today date */, "It's " /* today's day */, "You are " /* user name */, "I like stone.", "I like gem.", "I like rock.", "I like bones", "I like bubble tea", "I like milk tea", "I love Lord of the Rings"};
 	String[] when = { "During luchtime", "During dinner time.", "Perhaps during breakfast time.", "Two days ago.",
 			"It’s Triassic Period.", "It's "/* today date */, "250 million years later." };
 	String[] where = { "You are at my place.", "You are in my stomach.", "You are in the middle of a big continent." };
