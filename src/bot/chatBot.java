@@ -74,9 +74,9 @@ public class chatBot {
 	public static String thinking(){ //prints a line of dots after 1.5 seconds to mimic thinking animation
 		long curtime = System.currentTimeMillis();
 		long waittime1 = curtime + 150;
-		while (curtime != waittime1){				//************************************************
-			 curtime = System.currentTimeMillis();  //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
-		}                                           //************************************************
+		while (curtime != waittime1){				
+			 curtime = System.currentTimeMillis();  
+		}                                           
 		 return "............";
 
 	}
