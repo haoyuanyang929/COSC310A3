@@ -40,7 +40,10 @@ public class food extends chatBot implements TopicQuestions {
 			break;
 		case "how":
 			howQuestion(input);
-			break;	
+			break;
+		case "who":
+			howQuestion(input);
+			break;
 		}
 		
 	}
