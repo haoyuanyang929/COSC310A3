@@ -8,6 +8,7 @@ How to use use our Dino-Bot:
 1. Run the command line interface of your preference (eg. command prompt).
 2. Redirect the directory to the location of the file.
 3. On the console, type: `java -jar dinobot.jar`
+
 When the main image has been loaded,  Dino-bot (Tee-Tee) will ask you to input your name to ensure we can use it when you chat.
 You may either input "help" if you want to know what can Dino-Bot can talking about or just jump right into your conversation.
 -Roaring Contest:
