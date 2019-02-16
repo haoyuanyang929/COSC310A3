@@ -8,8 +8,6 @@ public class chatBot {
 	public static IrrelavantTopic irrTopic;
 	
 	public static void main(String args[]) {
-		//added a cute little printing thing. lemme know thoughts. keep it until we get GUI
-
 		irrTopic = new IrrelavantTopic();
 		Loadingscrean.main(args); 
 
@@ -78,7 +76,7 @@ public class chatBot {
 				String topgrabbed = topicsentence[i];
 				switch(topgrabbed){ //switch parsing string to see what happens
 				
-				case "yes": case "yup": case "okay": case "sure": case "ok":
+				case "yes": case "yup": case "okay": case "sure": case "ok": case "ye": case "yeah":
 					RawrXD.main(null); // plays roaring contest
 				case "no": case "nope": case "nah": case "never":
 					System.out.println("No? Okay then.");
