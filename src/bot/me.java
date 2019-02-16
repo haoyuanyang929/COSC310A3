@@ -31,7 +31,8 @@ public class me extends chatBot implements TopicQuestions {
 			"Because... Because... Because... What did you ask me again?", "Because I am a dinosaur." };
 
 	@Override
-	public void runTopic(String input) {				 
+	public void runTopic(String input) {
+		
 		String wHquestion = irrTopic.getwHquestion();
 		switch (wHquestion) {
 		case "what":
@@ -99,7 +100,7 @@ public class me extends chatBot implements TopicQuestions {
 			else if (a > 3 && a <= 6)i = 2;
 			else i = 3;
 
-			System.out.println(when[i]);// 0,2,3
+			System.out.println(what[i]);// 0,2,3
 		} else if ( input.contains("i")) { // the the user what the user is (i.e. what am i ) 
 			int i;
 			double a = Math.random() * 10;

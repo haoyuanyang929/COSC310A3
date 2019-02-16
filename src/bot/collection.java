@@ -2,6 +2,7 @@ package bot;
 
 import java.util.Scanner;
 
+@SuppressWarnings("resource")
 public class collection implements TopicQuestions {
 static int mathtest;
 	public void runTopic(String input)  {
