@@ -176,7 +176,7 @@ public class me extends chatBot implements TopicQuestions {
 		} else if (input.contains("will") || input.contains("2019")) { // ask about future 
 			GUI.textArea.append(when[7]);
 		} else { 		//exception
-			SGUI.textArea.append("My knowledge is limited. Can you reword it?");
+			GUI.textArea.append("My knowledge is limited. Can you reword it?");
 		}
 	}
 

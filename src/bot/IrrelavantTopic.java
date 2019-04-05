@@ -89,6 +89,9 @@ public class IrrelavantTopic extends chatBot{
 			
 		}
 		GUI.textArea.append("Sorry, I don't understand that.");	
+		System.out.println("Sorry, I don't understand that.");
+		System.out.println("Sorry, I don't understand that.");
+		System.out.println("Sorry, I don't understand that.");
 		return true;
 		// - set up for irrelavant topics = "i dont understand"
 
