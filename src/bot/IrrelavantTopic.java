@@ -38,7 +38,7 @@ public class IrrelavantTopic extends chatBot{
 		hasQuestion = false;
 		wHquestion = null;
 		if(input.contains("quit") || input.contains("leave") || input.contains("stop")) {
-			System.out.println("Thank you so much for talking to me! Have a good day!");
+			GUI.textArea.append("Thank you so much for talking to me! Have a good day!");
 			return false;
 		}
 		//check for keyword
@@ -88,7 +88,7 @@ public class IrrelavantTopic extends chatBot{
 				}
 			
 		}
-		System.out.println("Sorry, I don't understand that.");	
+		GUI.textArea.append("Sorry, I don't understand that.");	
 		return true;
 		// - set up for irrelavant topics = "i dont understand"
 
