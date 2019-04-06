@@ -58,6 +58,7 @@ public class me extends chatBot implements TopicQuestions {
 	public void whoQuestion(String input) {
 		// TODO Auto-generated method stub
 		// print out the following when "who" is asked in the class 
+		GUI.textArea.append("My knowledge is limited. Can you ask other question?");
 		System.out.println("My knowledge is limited. Can you ask other question?");
 
 
@@ -66,6 +67,7 @@ public class me extends chatBot implements TopicQuestions {
 	@Override
 	public void whatQuestion(String input) {
 		if (input.contains("can") || input.contains("capable")) {
+			GUI.textArea.append(what[4]);
 			System.out.println(what[4]);
 		} else if (input.contains("like")) { // this part list one of the things that Tee-Tee likes 
 			int i; 
@@ -78,20 +80,25 @@ public class me extends chatBot implements TopicQuestions {
 			else if ( a == 6 ) i = 13;
 			else if ( a == 7 ) i = 14;
 			else  i = 15;
+			GUI.textArea.append(what[i]);
 			System.out.println(what[i]); //Possible position:5,9,10,11,12,13,14,15  //print
 		} else if (input.contains("date")) { // print out the date of today 
 			SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy");
 			Date date = new Date();
+			GUI.textArea.append(what[6]+ dayFormat.format(date) + ".");
 			System.out.println(what[6] + dayFormat.format(date) + ".");
 		} else if (input.contains("day")) { // print out the day of the week of today 
 			// week day code
 			SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE");
 			Date date = new Date();
+			GUI.textArea.append(what[7] + dayFormat.format(date)+".");
 			System.out.println(what[7] + dayFormat.format(date)+".");
 		} else if (input.contains("name") && input.contains("my")) {  // print out user's name 
+			GUI.textArea.append(what[8] + name);
 			System.out.println(what[8] + name);
 
 		} else if ((input.contains("you") || input.contains("your"))&& input.contains("name")) {
+			GUI.textArea.append(what[1]);
 			System.out.println(what[1]);	// print out Tee-Tee's name 
 		}else if (input.contains("you")) {	// define what is Tee-Teee (i.e. what are you)
 			int i;
@@ -99,7 +106,7 @@ public class me extends chatBot implements TopicQuestions {
 			if (a <= 3 ) i = 0;					// Generate a random num. and print respond accordingly 
 			else if (a > 3 && a <= 6)i = 2;
 			else i = 3;
-
+			GUI.textArea.append(what[i]);
 			System.out.println(what[i]);// 0,2,3
 		} else if ( input.contains("i")) { // the the user what the user is (i.e. what am i ) 
 			int i;
@@ -110,8 +117,10 @@ public class me extends chatBot implements TopicQuestions {
 				i = 5;
 			else
 				i = 6;
+			GUI.textArea.append(who[i]);
 			System.out.println(who[i]);// 4,5,6
 		} else {						// exception
+			GUI.textArea.append("My knowledge is limited. Can you reword it?");
 			System.out.println("My knowledge is limited. Can you reword it?");
 		}
 
@@ -132,6 +141,7 @@ public class me extends chatBot implements TopicQuestions {
 				i = 1;
 			else
 				i = 2;
+			GUI.textArea.append(where[i]);
 			System.out.println(where[i]);// 0,1,2
 		} else if (input.contains("we")) {	// tell the user where are they 
 			int i;
@@ -140,8 +150,10 @@ public class me extends chatBot implements TopicQuestions {
 				i = 0;						// Generate a random num. and print respond accordingly 
 			else
 				i = 2;
+			GUI.textArea.append(where[i]);
 			System.out.println(where[i]);// 0,2
 		} else {	//exception
+			GUI.textArea.append("My knowledge is limited. Can you reword it?");
 			System.out.println("My knowledge is limited. Can you reword it?");
 		}
 
@@ -166,16 +178,21 @@ public class me extends chatBot implements TopicQuestions {
 				i = 1;
 			else
 				i = 2;
+			GUI.textArea.append(when[i]);
 			System.out.println(when[i]);// 0,1,2
 		} else if (input.contains("did") || input.contains("was") || input.contains("were")) { // ask about past 
+			GUI.textArea.append(when[3]);
 			System.out.println(when[3]);
 		} else if (input.contains("are") || input.contains("is") || input.contains("does")) { // ask about present 
 			SimpleDateFormat dayFormat = new SimpleDateFormat("MMM, dd yyyy");
 			Date date = new Date();			// print out today's date 
+			GUI.textArea.append(when[5] + dayFormat.format(date) + ".");
 			System.out.println(when[5] + dayFormat.format(date) + ".");
 		} else if (input.contains("will") || input.contains("2019")) { // ask about future 
+			GUI.textArea.append(when[7]);
 			System.out.println(when[7]);
 		} else { 		//exception
+			GUI.textArea.append("My knowledge is limited. Can you reword it?");
 			System.out.println("My knowledge is limited. Can you reword it?");
 		}
 	}
@@ -194,6 +211,7 @@ public class me extends chatBot implements TopicQuestions {
 				i = 5;
 			else
 				i = 7;
+			GUI.textArea.append(why[i]);
 			System.out.println(why[i]);// 1,2,5,7
 
 		} else if ((input.contains("good") || input.contains("excellent")) && input.contains("you")) { // why you are so good? & why you are excellent?
@@ -203,6 +221,7 @@ public class me extends chatBot implements TopicQuestions {
 				i = 3;						// Generate a random num. and print respond accordingly 
 			else
 				i = 4;
+			GUI.textArea.append(why[i]);
 			System.out.println(why[i]);// 3,4
 		} else {								// exception
 			int i;
@@ -211,6 +230,7 @@ public class me extends chatBot implements TopicQuestions {
 				i = 0;
 			else
 				i = 7;
+			GUI.textArea.append(why[i]);
 			System.out.println(why[i]);// 0,7
 		}
 
@@ -234,6 +254,7 @@ public class me extends chatBot implements TopicQuestions {
 				i = 2;
 			else
 				i = 3;
+			GUI.textArea.append(how[i]);
 			System.out.println(how[i]);// 2,3
 		} else if (input.contains("tall") || input.contains("long") || input.contains("big") || input.contains("size")) {	// ask about hight 
 			int i;
@@ -242,8 +263,10 @@ public class me extends chatBot implements TopicQuestions {
 				i = 4;								// Generate a random num. and print respond accordingly 
 			else
 				i = 5;
+			GUI.textArea.append(how[i]);
 			System.out.println(how[i]);// 4,5
 		} else if (input.contains("die") || input.contains("dead") || input.contains("died")) { // ask about death 
+			GUI.textArea.append(how[6]);
 			System.out.println(how[6]);
 		} else if (input.contains("you") && (input.contains("are") || input.contains("do"))) {  // how are you? or how do you do?
 			int i;
@@ -252,8 +275,10 @@ public class me extends chatBot implements TopicQuestions {
 				i = 0;
 			else								// Generate a random num. and print respond accordingly 
 				i = 1;
+			GUI.textArea.append(how[i]);
 			System.out.println(how[i]);// 0,1
 		} else {			// exception
+			GUI.textArea.append("My knowledge is limited. Can you reword it?");
 			System.out.println("My knowledge is limited. Can you reword it?");
 		}
 

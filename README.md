@@ -1,4 +1,4 @@
-# COSC310ChatBot Group 20 [Dino-Bot]  
+# COSC310ChatBot Group 20 [Dino-Bot] (Assignment 3 Eric -Yang )
 Members: Noah Arndt, Aidan Davies, Kathryn Ng, Yue Wang, Eric Yang
 
 ## A3 Changes

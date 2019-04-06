@@ -25,15 +25,16 @@ public class chatBot {
 	}
 	
 	public static void inputfield(String fromBTN) { //input method. Subject to change like crazy
-		Scanner inscan = new Scanner(System.in);
+		irrTopic = new IrrelavantTopic();
+		//Scanner inscan = new Scanner(System.in);
 		String startoption = fromBTN;
 		
 		//checking what they are talking about.
 		boolean continueConv;
-		do {
+		//do {
 			//startoption = (inscan.nextLine()).toLowerCase(); //scanning an input
 			continueConv = conversation(startoption);
-		}while(continueConv!=false);
+		//}while(continueConv!=false);
 		if (continueConv == false) {
 			System.exit(0);
 		}
@@ -49,10 +50,11 @@ public class chatBot {
 			
 		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | ClassNotFoundException | InstantiationException e) {
 			// TODO Auto-generated catch block
-			System.out.println("Sorry! There seems to be an issue.");
 			GUI.textArea.append("Sorry! There seems to be an issue.");
-			System.out.println("Please restart the program.");
+			System.out.println("Sorry! There seems to be an issue.");
 			GUI.textArea.append("Please restart the program.");
+			System.out.println("Please restart the program.");
+			
 			return false;
 		}
 	}
@@ -71,8 +73,9 @@ public class chatBot {
 	public static void checktopic(String top) { //grabs the topic, to save space this is used fo most topics
 		Scanner topche = new Scanner(System.in);
 		if(top.contains("roar")) {
-			System.out.println("Sorry! My dino-speech is better than my english, did you want to have a roaring contest?"); //maybe you didn't mean to go here
 			GUI.textArea.append("Sorry! My dino-speech is better than my english, did you want to have a roaring contest?");
+			System.out.println("Sorry! My dino-speech is better than my english, did you want to have a roaring contest?"); //maybe you didn't mean to go here
+			
 			String topicyesno = (topche.nextLine()).toLowerCase();
 			String[] topicsentence = topicyesno.split(" "); //splitting it up
 			for(int i = 0; i < topicsentence.length; i++){ //
@@ -86,8 +89,9 @@ public class chatBot {
 					inputfield(GUI.userInput); //returns false to where it was called.
 					
 				default:
-					System.out.println("I still don't understand."); //default incase you spam the keyboard
 					GUI.textArea.append("I still don't understand.");
+					System.out.println("I still don't understand."); //default incase you spam the keyboard
+					
 				}
 				topche.close();
 				inputfield(GUI.userInput);
@@ -121,8 +125,11 @@ public class chatBot {
 		System.out.println("Curious to know what I can talk about? Have a list"); //prints list of topics
 		GUI.textArea.append("Curious to know what I can talk about? Have a list");
 		System.out.println(thinking());	  //************************************************
+		GUI.textArea.append(thinking());
 		System.out.println(thinking());   //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
+		GUI.textArea.append(thinking());
 		System.out.println(thinking());   //************************************************
+		GUI.textArea.append(thinking());
 		System.out.println("..........."); //spacer
 		GUI.textArea.append("...........");
 		System.out.println("We can test how well your roar is!");			 	//Prompts roar contest
@@ -134,9 +141,9 @@ public class chatBot {
 		System.out.println("How about talking about Lord of The Rings?");		//Prompts Lord of The Rings topic
 		GUI.textArea.append("How about talking about Lord of The Rings?");
 		System.out.println("Or if you want to get to know me thats fine too!");	//Prompts general qna
-		GUI.textArea.append("Or if you want to get to know me thats fine too!");
+		("Or if you want to get to know me thats fine too!");
 		System.out.println(thinking());
-		
+		GUI.textArea.append(thinking());
 	}
 	
 	public static void aboutMe() {
