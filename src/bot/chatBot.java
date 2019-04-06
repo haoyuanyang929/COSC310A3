@@ -141,7 +141,7 @@ public class chatBot {
 		System.out.println("How about talking about Lord of The Rings?");		//Prompts Lord of The Rings topic
 		GUI.textArea.append("How about talking about Lord of The Rings?");
 		System.out.println("Or if you want to get to know me thats fine too!");	//Prompts general qna
-		("Or if you want to get to know me thats fine too!");
+		GUI.textArea.append("Or if you want to get to know me thats fine too!");
 		System.out.println(thinking());
 		GUI.textArea.append(thinking());
 	}
