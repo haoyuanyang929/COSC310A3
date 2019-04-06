@@ -1,5 +1,14 @@
-# COSC310ChatBot Group 20 [Dino-Bot]  **#A3 part will be after "##about our code"**
+# COSC310ChatBot Group 20 [Dino-Bot]  
 Members: Noah Arndt, Aidan Davies, Kathryn Ng, Yue Wang, Eric Yang
+
+## A3 Changes
+I clone the code of A2 and add on more stuff / and change on the A2 project 
+Using WindowBuilder to create a simple GUI for this program 
+In the previous project, the chatBot already have 5 topics. It's more then two topics which is more then Assignment 3 is asking for.
+I did not implement any spell check 
+I did not implement any toolkits 
+I did not use sockets 
+
 
 ## What is Dino-Bot?
 Dino-Bot is a conversation robot that you can talk to ( just like your friend !). We created this chatbot with the idea in mind of conversing with a prehistoric reptile.
@@ -39,7 +48,4 @@ Friendly reminder, Tee-Tee does not like swear words. However, you may try and s
 We have a main chatbot class, then we have other (topic) classes that implement the interface. All our topic classes are extended from the main chatbot class. When the input ( user's input) first receive, IrrelaventTipic class will process the input and assign the input to the related topic classes and also passes the input to the topic class. In each topic class, it will process the input ( user's input ) and find the reasonable respond to answer (print) the user. 
 
 
-#A3 Changes
-I clone the code of A2 and add on more stuff / and change on the A2 project 
-Using WindowBuilder to create a simple GUI for this program 
 
