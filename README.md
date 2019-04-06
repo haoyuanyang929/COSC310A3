@@ -29,6 +29,9 @@ The DFD diagram is included in the submission on canvas.
 3. The system structure, the structure is simple and easy to understand.
 4. Most of the topic class, they are in the most simple form. people can easily implement the code
 5. Swear filter. The swear filer is rally interesting. However, it definitely can be improve. 
+
+##Some down sides 
+I included a picture named "bad_thing", will be in both gitHub and canvas submission, to show some down sides. The first thing is most of the questions and answers will appear at the same line. Due to the death line of the project, i use my time to make sure my chatBot is actually working. However, it should be an easy fix. The second thing is, some of the topic the way they created is a little different from most topic. In order not mess up my chatBot, i didn't make it work to show on the GUI. However, it's still working in eclipse console. If you see the picture, "what is in your collection?" will be one of the examples. 
 		 
 -----------------------------------------------------------------------------------------------------------------
 
