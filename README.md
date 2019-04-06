@@ -9,6 +9,28 @@ I did not implement any spell check
 I did not implement any toolkits 
 I did not use sockets 
 
+## list of feature 
+	1. The GUI
+		in the previous version, we don't have a GUI for user. Right now i give a very simple GUI that user can use.  
+	2. more response for non topic questions
+		when user ask something that is not related to the topics, the chatBot now have more responses for the users. 
+			i. "Sorry! There seems to be an issue."
+			ii. "I still don't understand."
+			iii. "My "My knowledge is limited. Can you reword it?"
+			iv. "We can talk about food"
+			v. "I don't understand"
+			
+## DFD
+The DFD diagram is included in the submission on canvas.
+
+## Code that can be share with others 
+1. The GUI design, it's super simple that people can reuse the code and add more on it. 
+2. The roaring contest code, it's a fun small game that it have its own class. So easy to share with others.
+3. The system structure, the structure is simple and easy to understand.
+4. Most of the topic class, they are in the most simple form. people can easily implement the code
+5. Swear filter. The swear filer is rally interesting. However, it definitely can be improve. 
+		 
+-----------------------------------------------------------------------------------------------------------------
 
 ## What is Dino-Bot?
 Dino-Bot is a conversation robot that you can talk to ( just like your friend !). We created this chatbot with the idea in mind of conversing with a prehistoric reptile.
