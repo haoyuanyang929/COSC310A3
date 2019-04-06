@@ -85,7 +85,7 @@ public class GUI {
 				}else {
 					chatBot.inputfield(userInput);
 				}
-				tFMessage.removeAll();
+				//tFMessage.removeAll();
 			}
 		});
 		btnSendMsg.setAction(action);

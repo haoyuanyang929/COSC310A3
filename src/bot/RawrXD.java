@@ -23,7 +23,7 @@ public class RawrXD extends chatBot{
 				switch(sentencecheck[i]) { //then throws you to very start if you decide not to.
 				case "quit":	case "stop":	case "end": 	case "leave":	case "cease": //improved efficency
 					System.out.println("Maybe we can try again later?");
-					chatBot.inputfield(GUI.userInput);
+					chatBot.inputfield();
 					break;
 				default: 
 					break;
@@ -39,7 +39,7 @@ public class RawrXD extends chatBot{
 			switch (yourroar) { //switch case to see if you typed quit or stop. if not goes into the test
 			case "quit":	case "stop":	case "end": 	case "leave":	case "cease":
 				System.out.println("Maybe we can try again later?");
-				chatBot.inputfield(GUI.userInput);
+				chatBot.inputfield();
 				break;
 			default:
 				int size = yourroar.length(); //checking length then throwing to the tester.

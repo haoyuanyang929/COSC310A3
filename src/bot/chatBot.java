@@ -52,7 +52,7 @@ public class chatBot {
 			System.out.println("Sorry! There seems to be an issue.");
 			GUI.textArea.append("Sorry! There seems to be an issue.");
 			System.out.println("Please restart the program.");
-			GUI.textArea.append("Sorry! There seems to be an issue.");
+			GUI.textArea.append("Please restart the program.");
 			return false;
 		}
 	}

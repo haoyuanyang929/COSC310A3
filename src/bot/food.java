@@ -78,15 +78,15 @@ public class food extends chatBot implements TopicQuestions {
 		if (input.contains("eat")){
 			int mathtest = (int)(Math.random()*2);
 				if(mathtest == 1)
-					GUI.textArea.append(what[0]);
+					System.out.println(what[0]);
 				else
-					GUI.textArea.append(what[1]);
+					System.out.println(what[1]);
 			}
 		else if(input.contains("drink")){
-			GUI.textArea.append(what[2]);
+			System.out.println(what[2]);
 		}
 		else if(input.contains("about")){
-			GUI.textArea.append(what[3]);
+			System.out.println(what[3]);
 		}
 		
 	}
@@ -97,10 +97,10 @@ public class food extends chatBot implements TopicQuestions {
 	public void whereQuestion(String input) {
 		// TODO Auto-generated method stub
 		if (input.contains("eat")){
-			GUI.textArea.append(where[0]);		
+			System.out.println(where[0]);		
 		}
 		else if (input.contains("bubble tea") && input.contains("invent")){
-			GUI.textArea.append(where[1]);
+			System.out.println(where[1]);
 		}
 	}
 
@@ -110,20 +110,20 @@ public class food extends chatBot implements TopicQuestions {
 	public void whenQuestion(String input) {
 		// TODO Auto-generated method stub
 		if (input.contains("eat") && input.contains("lunch")){
-			GUI.textArea.append(when[0]);
+			System.out.println(when[0]);
 		}
 		else if (input.contains("eat") && input.contains("dinner")){
-			GUI.textArea.append(when[1]);
+			System.out.println(when[1]);
 		}
 		else if (input.contains("eat") && input.contains("breakfast")){
-			GUI.textArea.append(when[2]);
+			System.out.println(when[2]);
 		}
 		
 		else if (input.contains("last") && input.contains("meal")){
-			GUI.textArea.append(when[3]);
+			System.out.println(when[3]);
 		}
 		else if (input.contains("eat")){
-			GUI.textArea.append(when[4]);
+			System.out.println(when[4]);
 		}
 	}
 
@@ -133,10 +133,10 @@ public class food extends chatBot implements TopicQuestions {
 	public void whyQuestion(String input) {
 		// TODO Auto-generated method stub
 		if (input.contains("eat") && (input.contains("me")|| input.contains("human"))){
-			GUI.textArea.append(who[1]);
+			System.out.println(who[1]);
 		}
 		else if (input.contains("eat")){
-			GUI.textArea.append(who[0]);
+			System.out.println(who[0]);
 		}
 	}
 
@@ -146,15 +146,15 @@ public class food extends chatBot implements TopicQuestions {
 	public void howQuestion(String input) {
 		// TODO Auto-generated method stub
 		if (input.contains("about")){
-			GUI.textArea.append(how[1]);
+			System.out.println(how[1]);
 		} else if (input.contains("many") && input.contains("meal") && (input.contains("eat"))){
-			GUI.textArea.append(how[0]);
+			System.out.println(how[0]);
 		} else if (input.contains("do") && input.contains("eat")){
-			GUI.textArea.append(how[2]);
+			System.out.println(how[2]);
 		} else if (input.contains("bubble tea") && input.contains("made")){
-			GUI.textArea.append(how[3]);
+			System.out.println(how[3]);
 		} else if (input.contains("do") && input.contains("like") && input.contains("bubble tea")){
-			GUI.textArea.append(how[4]);
+			System.out.println(how[4]);
 			
 		}
 	}
